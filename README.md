@@ -1,27 +1,70 @@
-# FeProDriverPeru
+# Front End Pro Driver Perú
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+## Structure
+```
+raiz
+	login /login
+		sign-in
+		sign-out
+		sign-up
+	layout
+		layout-header
+		layout-menu
+		layout-panel
 
-## Development server
+		home /home
+			home-driver
+                (dialog) offer-preview
+			home-employer
+                (dialog) create-offer
+		search /search
+			search-results /results
+				(profile embebido)search-profile /profile
+				/:id
+		---(OJO)---
+		profile /profile
+			profile-driver
+			/:id
+			(dialog) notify
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+		my-profile /my-profile
+			profile-edit /edit
+		---(OJO)---
 
-## Code scaffolding
+    notifications /notifications
+		  listar
+      /:id
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+		offers /offers
+			offers-driver (aplicadas)
+            /offers-applied
+                /:id
+			offers-employer (creada)
+            /offers-made
+                /:id
+```
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Commands CLI
+```
+ng g c component/home --skip-tests   
+ng g c component/login --skip-tests
+ng g c component/layout
+ng g c component/layout --skip-tests
+ng g c component/layout/layout-header --skip-tests
+ng g c component/layout/layout-menu --skip-tests   
+ng g c component/layout/layout-panel --skip-tests 
+ng g c component/layout/home --skip-tests         
+ng g c component/layout/home/home-driver --skip-tests 
+ng g c component/layout/home/home-employer --skip-tests 
+ng g c component/layout/search --skip-tests             
+ng g c component/layout/search/search-results --skip-tests 
+ng g c component/layout/profile --skip-tests               
+ng g c component/layout/profile/profile-driver --skip-tests 
+ng g c component/layout/my-profile/profile-edit --skip-tests 
+ng g c component/layout/notifications --skip-tests           
+ng g c component/layout/offers --skip-tests        
+ng g c component/layout/offers-driver --skip-tests 
+ng g c component/layout/offers-employer --skip-tests 
+ng g c component/layout/offers-employer/offers-made --skip-tests 
+ng g c component/layout/offers-driver/offers-applied --skip-tests
+```
