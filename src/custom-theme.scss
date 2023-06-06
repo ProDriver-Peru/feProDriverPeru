@@ -1,0 +1,107 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+$prodriverperu-primary-palette: (
+  50: #e1f5fd,
+  100: #b3e6f9,
+  200: #82d5f6,
+  300: #51c4f2,
+  400: #2cb8f0,
+  500: #02abee,
+  600: #009ddf,
+  700: #008acc,
+  800: #0079b8,
+  900: #005996,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+$prodriverperu-accent-palette: (
+  50: #e0f2f1,
+  100: #b2dfdb,
+  200: #80cbc3,
+  300: #4db6ab,
+  400: #26a699,
+  500: #009687,
+  600: #00897a,
+  700: #00796a,
+  800: #00695b,
+  900: #004d3f,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+$prodriverperu-warn-palette: (
+ 50: #fdeaee,
+ 100: #fbcad2,
+ 200: #ea959b,
+ 300: #de6c74,
+ 400: #e84853,
+ 500: #ed323b,
+ 600: #de2839,
+ 700: #cc1d33,
+ 800: #bf152c,
+ 900: #b00020,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: rgba(black, 0.87),
+   600: rgba(black, 0.87),
+   700: rgba(black, 0.87),
+   800: rgba(black, 0.87),
+   900: white,
+)
+);
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$feProDriverPeru-primary: mat.define-palette($prodriverperu-primary-palette);
+$feProDriverPeru-accent: mat.define-palette($prodriverperu-accent-palette);
+$feProDriverPeru-warn: mat.define-palette($prodriverperu-warn-palette);
+
+// The warn palette is optional (defaults to red).
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$feProDriverPeru-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $feProDriverPeru-primary,
+      accent: $feProDriverPeru-accent,
+      warn: $feProDriverPeru-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($feProDriverPeru-theme);

@@ -1,0 +1,56 @@
+<div>
+  <h1>Inicio</h1>
+
+  <section class="seccion">
+    <div class="actions">
+      <button
+        type="submit"
+        class="search-button"
+        routerLink="/home/buscarPropuesta"
+      >
+        <a> Buscar </a>
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <div class="content">
+      <article class="ficha">
+        <p class="driver-name">
+          name
+          lastName
+        </p>
+        <div class="descr">
+          <div class="contenido">
+            descripcion
+          </div>
+          <img src="/assets/images/Postulante1.jpeg" />
+        </div>
+        <button class="boton-ver-perfil">Ver perfil</button>
+      </article>
+      <article class="ficha">
+        <p class="driver-name">
+          name
+          lastName
+        </p>
+        <div class="descr">
+          <div class="contenido">
+            descripcion
+          </div>
+          <img src="/assets/images/Postulante2.jpeg" />
+        </div>
+        <button class="boton-ver-perfil">Ver perfil</button>
+      </article>
+    </div>
+
+    <mat-radio-group style="margin-bottom: 20px" [(ngModel)]="selectedValue">
+      <mat-radio-button value="1"></mat-radio-button>
+      <mat-radio-button value="2"></mat-radio-button>
+      <mat-radio-button value="3"></mat-radio-button>
+      <mat-radio-button value="4"></mat-radio-button>
+    </mat-radio-group>
+
+    <button class="newcreate" routerLink="/home/new-job-offer">
+      <a> Crear propuesta laboral </a>
+      <i class="fa fa-square-plus" style="font-size: 15px"></i>
+    </button>
+  </section>
+</div>

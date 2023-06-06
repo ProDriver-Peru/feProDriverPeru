@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.brand {
+  font-family: 'Poppins', sans-serif;
+  /* no undeline */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+}
+.cont {
+  padding: 50px;
+}

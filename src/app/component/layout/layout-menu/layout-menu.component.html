@@ -1,1 +1,40 @@
-<p>layout-menu works!</p>
+<div class="left-menu">
+  <mat-button-toggle-group
+    vertical="true"
+    name="fontStyle"
+    aria-label="Font Style"
+  >
+    <mat-button-toggle value="home" class="menu-button" routerLink="/home">
+      <mat-icon>home</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="offers" class="menu-button" routerLink="/offers">
+      <mat-icon>description</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="notifications" class="menu-button" routerLink="/notifications">
+      <mat-icon> notifications</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <button class="settings-button" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon
+        id="settings-button-icon"
+        aria-hidden="false"
+        fontIcon="settings"
+      ></mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item href="https://prodriver-peru.github.io/" target="_blank">
+      <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+      Acerca de
+    </a>
+    <a mat-menu-item href="#">
+      <mat-icon
+        aria-hidden="false"
+        fontIcon="logout"
+        routerLink="login"
+      ></mat-icon>
+      Cerrar sesión
+    </a>
+  </mat-menu>
+</div>

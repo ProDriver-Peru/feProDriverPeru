@@ -1,0 +1,40 @@
+<div class="proposal-form">
+
+      <div class="proposal-form-form">
+        <form [formGroup]="form" (submit)="aceptar()">
+          <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Código" >
+          </mat-form-field>
+
+          <br>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput required placeholder="Descripción" ></textarea>
+          </mat-form-field>
+
+          <br>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Tipo de Licencia</mat-label>
+            <input matInput required placeholder="Licencia" >
+          </mat-form-field>
+
+          <br>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Año de experiencia</mat-label>
+            <input matInput required placeholder="Año de experiencia" >
+          </mat-form-field>
+
+          <br>
+
+          <button mat-raised-button class="btn" type="submit" >Publicar</button>
+
+          <p>{{mensaje}}</p>
+
+        </form>
+      </div>
+
+    </div>

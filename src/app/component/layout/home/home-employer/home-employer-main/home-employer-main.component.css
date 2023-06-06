@@ -1,0 +1,156 @@
+.start {
+  padding: 30px;
+}
+header {
+  font-weight: bold;
+}
+h1 {
+  font-weight: bold;
+}
+.descr {
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ficha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.driver-name {
+  font-weight: bold;
+  color: #667080;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.seccion {
+  margin: 20px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 0%;
+}
+article {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 350px;
+  margin: 20px;
+  float: left;
+  background: #d4d1d1;
+}
+img {
+  width: 22%;
+  margin: 11px;
+  float: right;
+}
+.contenido {
+  float: left;
+  width: 60%;
+  color: #667080;
+  overflow: hidden;
+  /*ellipsis but in a wrapped text*/
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6; /* number of lines to show */
+}
+.boton-ver-perfil {
+  background-color: #009688; /* Color de fondo del botón */
+  border: none; /* Borde del botón */
+  color: white; /* Color del texto del botón */
+  padding: 10px 20px; /* Espacio alrededor del texto del botón */
+  text-align: center; /* Alineación del texto del botón */
+  text-decoration: none; /* Estilo de subrayado del texto del botón */
+  display: inline-block; /* Mostrar el botón como un elemento en línea */
+  font-size: 16px; /* Tamaño de letra del botón */
+  margin: 10px 10px; /* Margen superior e inferior del botón */
+  margin-top: -10px;
+  cursor: pointer; /* Cambiar el cursor al pasar el ratón sobre el botón */
+  border-radius: 5px; /* Radio de borde del botón */
+}
+.barra-navegacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 20px;
+  float: center;
+}
+
+.barra-navegacion ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.barra-navegacion li {
+  margin: 0 5px;
+}
+
+.barra-navegacion button {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+.barra-navegacion button:hover {
+  /*slowed changed*/
+  transition: 0.2s;
+  background-color: #666;
+}
+
+.barra-navegacion button.activo {
+  background-color: #333;
+  box-shadow: 0px 0px 4px #333;
+}
+.content {
+  width: 800px;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-button {
+  background-color: #02aaee;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.fa-search:before {
+  content: "\f002";
+}
+
+.search-button i {
+  margin-right: 5px;
+}
+.actions {
+  width: 60%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.newcreate {
+  background-color: #009688;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  padding: 0 10px;
+}

@@ -1,1 +1,41 @@
-<p>login works!</p>
+<img class="wave" src="assets/images/wave.png" />
+<div class="container">
+  <div class="img">
+    <img src="assets/images/logo1010x728.png" />
+  </div>
+  <div class="login-content">
+    <form [formGroup]="form" (submit)="login()">
+      <img src="assets/images/avatar.svg" />
+      <h2 class="title">Iniciar Sesión</h2>
+      <div class="input-div one">
+        <div class="i">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+          <input
+            type="email"
+            name="email"
+            placeholder="@ Correo Electrónico"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <div class="input-div pass">
+        <div class="i">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="div">
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <a href="#">Forgot Password?</a>
+      <input mat-raised-button type="submit" class="btn" value="Login" />
+    </form>
+  </div>
+</div>
+<script type="text/javascript" src="assets/scripts/main.js"></script>
