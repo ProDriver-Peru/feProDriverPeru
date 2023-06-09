@@ -21,7 +21,7 @@ export class OffersEmployerComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.offerService.listOffers().subscribe(data=>{
+    this.offerService.getListOffers().subscribe(data=>{
       this.dataSource.data=data;
     })
   }

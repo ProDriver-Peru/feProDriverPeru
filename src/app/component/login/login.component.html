@@ -6,6 +6,7 @@
   <div class="login-content">
     <form [formGroup]="form" (submit)="login()">
       <img src="assets/images/avatar.svg" />
+      <h2 class="brand">PRODRIVER+</h2>
       <h2 class="title">Iniciar Sesión</h2>
       <div class="input-div one">
         <div class="i">
@@ -34,8 +35,8 @@
         </div>
       </div>
       <a href="#">Forgot Password?</a>
-      <input mat-raised-button type="submit" class="btn" value="Login" />
+      <button mat-raised-button type="submit" class="btn" style="color: white;">Login</button>
+      <button mat-raised-button style="border-radius: 70px;" color="accent" routerLink="/register">Register</button>
     </form>
   </div>
 </div>
-<script type="text/javascript" src="assets/scripts/main.js"></script>

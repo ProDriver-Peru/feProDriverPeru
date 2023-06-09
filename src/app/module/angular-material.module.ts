@@ -15,6 +15,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [],
@@ -34,7 +36,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSortModule
+    MatSortModule,
+    MatDividerModule,
+    MatPaginatorModule,
   ],
   exports: [
     MatToolbarModule,
@@ -51,7 +55,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSortModule
+    MatSortModule,
+    MatDividerModule,
+    MatPaginatorModule,
   ],
 })
 export class AngularMaterialModule {}

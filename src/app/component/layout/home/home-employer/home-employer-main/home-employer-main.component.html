@@ -1,3 +1,45 @@
+<h1>Inicio</h1>
+<div class="mat-card-flex">
+  <div *ngFor="let driver of this.shownDrivers">
+    <mat-card class="mat-card">
+      <mat-card-header>
+        <mat-card-title>{{ driver.name }} {{ driver.lastname }}</mat-card-title>
+        <mat-card-subtitle>
+          Licencia: {{ driver.licenseType }} |
+
+         </mat-card-subtitle
+        >
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAoeO_LdlLndsGi9o-jbIbS7cqG5fgV5uP6Q&usqp=CAU"
+        alt="User's photo"
+      />
+      <br />
+      <mat-card-content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+          convallis tortor nunc. Mauris lobortis pulvinar nisi. Sed fringilla
+          tortor ut orci volutpat viverra. Sed a augue a turpis varius tincidunt
+          vitae eu lectus.
+        </p>
+      </mat-card-content>
+      <div style="flex: 1 1 auto"></div>
+      <span></span>
+      <mat-card-actions align="end">
+        <button [class.mat-elevation-z0]="true" mat-flat-button color="accent">
+          Ver perfil
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+
+<!--
 <div>
   <h1>Inicio</h1>
 
@@ -54,3 +96,4 @@
     </button>
   </section>
 </div>
+-->

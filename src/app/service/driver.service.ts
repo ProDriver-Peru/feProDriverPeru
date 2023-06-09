@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environment/environment';
-import { Offer } from 'src/model/Offer';
+import { Driver } from 'src/model/Driver';
 import { Observable } from 'rxjs';
 
 const baseUrl = environment.base;
@@ -9,13 +9,14 @@ const baseUrl = environment.base;
 @Injectable({
   providedIn: 'root'
 })
-export class OfferService {
+export class DriverService {
 
-    private urlOffer = `${baseUrl}/jobOffer`;
+    private urlDriver = `${baseUrl}/driver`;
 
     constructor(private http:HttpClient) { }
 
-    getListOffers():Observable<any>{
-      return this.http.get<Offer[]>(this.urlOffer)
+    getListDrivers():Observable<any>{
+      return this.http.get<Driver[]>(this.urlDriver);
     }
+
 }

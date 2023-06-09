@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environment/environment';
-import { Offer } from 'src/model/Offer';
+import { User } from 'src/model/User';
 import { Observable } from 'rxjs';
 
 const baseUrl = environment.base;
@@ -9,13 +9,14 @@ const baseUrl = environment.base;
 @Injectable({
   providedIn: 'root'
 })
-export class OfferService {
+export class AuthService {
 
-    private urlOffer = `${baseUrl}/jobOffer`;
+  private urlAuth = `${baseUrl}/auth`;
 
-    constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
-    getListOffers():Observable<any>{
-      return this.http.get<Offer[]>(this.urlOffer)
-    }
+  checkLogin (email: String, password: String):Boolean{
+    return true;
+  }
+
 }

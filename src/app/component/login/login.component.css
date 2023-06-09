@@ -1,19 +1,8 @@
-*{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-body{
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-}
-
 .wave{
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	height: 100%;
+	position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 80vh;
 	z-index: -1;
 }
 
@@ -53,7 +42,7 @@ form{
 
 .login-content h2{
 	margin: 15px 0;
-	color: #333;
+	color: #000000;
 	text-transform: uppercase;
 	font-size: 2.9rem;
 }
@@ -64,7 +53,7 @@ form{
     grid-template-columns: 7% 93%;
     margin: 25px 0;
     padding: 5px 0;
-    border-bottom: 2px solid #d9d9d9;
+    border-bottom: 2px solid #005996;
 }
 
 .login-content .input-div.one{
@@ -72,7 +61,7 @@ form{
 }
 
 .i{
-	color: #d9d9d9;
+	color: #005996;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -92,7 +81,7 @@ form{
 	left: 10px;
 	top: 50%;
 	transform: translateY(-50%);
-	color: #999;
+	color: #005996;
 	font-size: 18px;
 	transition: .3s;
 }
@@ -139,7 +128,7 @@ form{
 	background: none;
 	padding: 0.5rem 0.7rem;
 	font-size: 1.2rem;
-	color: #555;
+	color: #005996;
 	font-family: 'poppins', sans-serif;
 }
 
@@ -151,7 +140,7 @@ a{
 	display: block;
 	text-align: right;
 	text-decoration: none;
-	color: #999;
+	color: #005996;
 	font-size: 0.9rem;
 	transition: .3s;
 }

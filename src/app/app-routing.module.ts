@@ -12,6 +12,7 @@ import { ProfileComponent } from './component/layout/profile/profile.component';
 import { ProfileEditComponent } from './component/layout/my-profile/profile-edit/profile-edit.component';
 import { MyProfileComponent } from './component/layout/my-profile/my-profile.component';
 import { OffersEmployerComponent } from './component/layout/offers/offers-employer/offers-employer.component';
+import { SearchComponent } from './component/layout/search/search.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
                 path: 'new-job-offer',
                 component: NewJobOfferComponent,
               },
+              {
+                path: 'search-driver',
+                component: SearchComponent,
+              }
             ],
           },
         ],
