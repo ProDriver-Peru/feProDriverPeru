@@ -15,7 +15,10 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  checkLogin (email: String, password: String):Boolean{
+  checkLogin (email: string, password: string):boolean{
+    let user: User = new User();
+    user.email= email;
+    user.password = password;
     return true;
   }
 

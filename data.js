@@ -17,7 +17,8 @@ module.exports = function () {
         employed: false,
         licenseType: "A-IIIb",
         license: "E64294438",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "07084031",
         name: "Aldis",
         lastname: "Ruddell",
@@ -25,13 +26,15 @@ module.exports = function () {
         password: "6dTYI5v",
         dateOfBirth: "19921013",
         plan: "Shark",
+        }
       },
       {
         id: 2,
         employed: true,
         licenseType: "A-IIIa",
         license: "X20234595",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "11467582",
         name: "Denis",
         lastname: "Gliddon",
@@ -39,13 +42,15 @@ module.exports = function () {
         password: "MbTtjTAU",
         dateOfBirth: "19870903",
         plan: "Sharky",
+        }
       },
       {
         id: 3,
         employed: true,
         licenseType: "A-IIa",
         license: "P86083487",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "01993289",
         name: "Duncan",
         lastname: "Tenwick",
@@ -53,13 +58,15 @@ module.exports = function () {
         password: "pRESdN3w1N",
         dateOfBirth: "19851219",
         plan: "Sharky",
+        }
       },
       {
         id: 4,
         employed: true,
         licenseType: "A-IIIb",
         license: "F24134697",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "40908240",
         name: "Farlie",
         lastname: "Ropcke",
@@ -67,13 +74,15 @@ module.exports = function () {
         password: "JHzWQ44lA",
         dateOfBirth: "19840505",
         plan: "Sharky",
+        }
       },
       {
         id: 5,
         employed: false,
         licenseType: "A-IIa",
         license: "Y09550720",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "78726801",
         name: "Northrup",
         lastname: "Book",
@@ -81,13 +90,15 @@ module.exports = function () {
         password: "4mPYHpeFLs",
         dateOfBirth: "19950522",
         plan: "Sharky",
+        }
       },
       {
         id: 6,
         employed: true,
         licenseType: "A-IIIb",
         license: "A85736647",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "57152417",
         name: "Gil",
         lastname: "Cubbini",
@@ -95,13 +106,15 @@ module.exports = function () {
         password: "2srZZQDym4",
         dateOfBirth: "20010728",
         plan: "Shark",
+        }
       },
       {
         id: 7,
         employed: false,
         licenseType: "A-I",
         license: "C28071301",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "15155329",
         name: "Silvester",
         lastname: "Moffatt",
@@ -109,13 +122,15 @@ module.exports = function () {
         password: "caizWtsxfX",
         dateOfBirth: "19990606",
         plan: "WhiteShark",
+        }
       },
       {
         id: 8,
         employed: false,
         licenseType: "A-IIb",
         license: "N25838171",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "20918216",
         name: "Gardy",
         lastname: "Brattan",
@@ -123,13 +138,15 @@ module.exports = function () {
         password: "qB7yydBltRD",
         dateOfBirth: "19971101",
         plan: "WhiteShark",
+        }
       },
       {
         id: 9,
         employed: true,
         licenseType: "A-IIa",
         license: "N06074683",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "93493160",
         name: "Aluin",
         lastname: "Corneliussen",
@@ -137,13 +154,15 @@ module.exports = function () {
         password: "VujRKCirL7Hd",
         dateOfBirth: "19910628",
         plan: "Sharky",
+        }
       },
       {
         id: 10,
         employed: false,
         licenseType: "A-IIIb",
         license: "O24935256",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "25099854",
         name: "Chad",
         lastname: "Bowlesworth",
@@ -151,13 +170,15 @@ module.exports = function () {
         password: "6bJpqRQy",
         dateOfBirth: "19991128",
         plan: "Sharky",
+        }
       },
       {
         id: 11,
         employed: false,
         licenseType: "A-I",
         license: "W54920698",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "02778397",
         name: "Denis",
         lastname: "Murphy",
@@ -165,13 +186,15 @@ module.exports = function () {
         password: "DoFAoK6VSo",
         dateOfBirth: "19900315",
         plan: "Sharky",
+        }
       },
       {
         id: 12,
         employed: true,
         licenseType: "A-I",
         license: "P18071776",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "57255103",
         name: "Thorin",
         lastname: "Skinn",
@@ -179,13 +202,15 @@ module.exports = function () {
         password: "fpk2cSZomN",
         dateOfBirth: "20001218",
         plan: "Shark",
+        }
       },
       {
         id: 13,
         employed: true,
         licenseType: "A-IIIb",
         license: "R97248425",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "45626157",
         name: "Siffre",
         lastname: "Chesley",
@@ -193,13 +218,15 @@ module.exports = function () {
         password: "YoA3YAw9T4B",
         dateOfBirth: "19880806",
         plan: "Shark",
+        }
       },
       {
         id: 14,
         employed: true,
         licenseType: "A-I",
         license: "J40643801",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "78526434",
         name: "Tye",
         lastname: "Bly",
@@ -207,13 +234,15 @@ module.exports = function () {
         password: "0VP0ua",
         dateOfBirth: "19860712",
         plan: "Shark",
+        }
       },
       {
         id: 15,
         employed: true,
         licenseType: "A-IIIa",
         license: "F12455433",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "82374556",
         name: "Rabbi",
         lastname: "Howley",
@@ -221,13 +250,15 @@ module.exports = function () {
         password: "dD0OBa",
         dateOfBirth: "19870915",
         plan: "Shark",
+        }
       },
       {
         id: 16,
         employed: true,
         licenseType: "A-IIIa",
         license: "U73723492",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "72761547",
         name: "Haslett",
         lastname: "Keri",
@@ -235,13 +266,15 @@ module.exports = function () {
         password: "j3xJsb7a",
         dateOfBirth: "19820205",
         plan: "WhiteShark",
+        }
       },
       {
         id: 17,
         employed: true,
         licenseType: "A-IIIa",
         license: "D97942538",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "59716917",
         name: "Angel",
         lastname: "Liepins",
@@ -249,13 +282,15 @@ module.exports = function () {
         password: "xgKbf5oYm",
         dateOfBirth: "20020112",
         plan: "WhiteShark",
+        }
       },
       {
         id: 18,
         employed: true,
         licenseType: "A-IIIa",
         license: "U71685838",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "33591138",
         name: "Danya",
         lastname: "Hogbin",
@@ -263,13 +298,15 @@ module.exports = function () {
         password: "fkxd9i54t",
         dateOfBirth: "19980915",
         plan: "Sharky",
+        }
       },
       {
         id: 19,
         employed: false,
         licenseType: "A-IIIb",
         license: "U98282886",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "65560797",
         name: "Jessey",
         lastname: "Seemmonds",
@@ -277,13 +314,15 @@ module.exports = function () {
         password: "fXOT4C",
         dateOfBirth: "20000304",
         plan: "Sharky",
+        }
       },
       {
         id: 20,
         employed: false,
         licenseType: "A-IIa",
         license: "S23033020",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "41042529",
         name: "Euell",
         lastname: "Garvie",
@@ -291,13 +330,15 @@ module.exports = function () {
         password: "sT1QBFesgT",
         dateOfBirth: "19931109",
         plan: "Sharky",
+        }
       },
       {
         id: 21,
         employed: false,
         licenseType: "A-I",
         license: "U07649054",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "18134733",
         name: "Antone",
         lastname: "Loyd",
@@ -305,13 +346,15 @@ module.exports = function () {
         password: "wmPReCBi8",
         dateOfBirth: "19991122",
         plan: "Shark",
+        }
       },
       {
         id: 22,
         employed: false,
         licenseType: "A-I",
         license: "F58748254",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "59414511",
         name: "Ode",
         lastname: "Serraillier",
@@ -319,13 +362,15 @@ module.exports = function () {
         password: "OtZkqA",
         dateOfBirth: "19901128",
         plan: "Sharky",
+        }
       },
       {
         id: 23,
         employed: false,
         licenseType: "A-IIIb",
         license: "D31660947",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "96082708",
         name: "Wilt",
         lastname: "Wodham",
@@ -333,13 +378,15 @@ module.exports = function () {
         password: "AIa9PsvF",
         dateOfBirth: "19840809",
         plan: "Shark",
+        }
       },
       {
         id: 24,
         employed: false,
         licenseType: "A-IIb",
         license: "Q84302817",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "33449157",
         name: "Xever",
         lastname: "Komorowski",
@@ -347,13 +394,15 @@ module.exports = function () {
         password: "QEHbApVUJm",
         dateOfBirth: "19951127",
         plan: "Shark",
+        }
       },
       {
         id: 25,
         employed: true,
         licenseType: "A-IIIa",
         license: "Z04447790",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "00966861",
         name: "Fax",
         lastname: "Svanetti",
@@ -361,13 +410,15 @@ module.exports = function () {
         password: "o1IPU8q",
         dateOfBirth: "19960510",
         plan: "Sharky",
+        }
       },
       {
         id: 26,
         employed: true,
         licenseType: "A-I",
         license: "V33970721",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "43452274",
         name: "Adams",
         lastname: "Fuster",
@@ -375,13 +426,15 @@ module.exports = function () {
         password: "OCioLWWING",
         dateOfBirth: "19990702",
         plan: "Sharky",
+        }
       },
       {
         id: 27,
         employed: false,
         licenseType: "A-IIb",
         license: "X03120952",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "60529301",
         name: "Holly",
         lastname: "Herkess",
@@ -389,13 +442,15 @@ module.exports = function () {
         password: "tdUmtCYSbc",
         dateOfBirth: "19821011",
         plan: "WhiteShark",
+        }
       },
       {
         id: 28,
         employed: false,
         licenseType: "A-IIa",
         license: "P58725121",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "60051949",
         name: "Freeland",
         lastname: "Enderwick",
@@ -403,13 +458,15 @@ module.exports = function () {
         password: "NqFlaYnWx",
         dateOfBirth: "19800827",
         plan: "Sharky",
+        }
       },
       {
         id: 29,
         employed: false,
         licenseType: "A-I",
         license: "J24869756",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "50204609",
         name: "Art",
         lastname: "Alvarado",
@@ -417,13 +474,15 @@ module.exports = function () {
         password: "sq5wUTo",
         dateOfBirth: "19870311",
         plan: "Sharky",
+        }
       },
       {
         id: 30,
         employed: false,
         licenseType: "A-IIa",
         license: "Q77612547",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "55337850",
         name: "Renard",
         lastname: "Spencers",
@@ -431,13 +490,15 @@ module.exports = function () {
         password: "W7QPP8ZKn",
         dateOfBirth: "19940202",
         plan: "WhiteShark",
+        }
       },
       {
         id: 31,
         employed: false,
         licenseType: "A-IIIa",
         license: "C94350178",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "20290996",
         name: "Burty",
         lastname: "O'Shirine",
@@ -445,13 +506,15 @@ module.exports = function () {
         password: "1XN6vVKtWDx",
         dateOfBirth: "19970214",
         plan: "Sharky",
+        }
       },
       {
         id: 32,
         employed: true,
         licenseType: "A-IIIa",
         license: "I51227312",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "33327672",
         name: "Slade",
         lastname: "Glauber",
@@ -459,13 +522,15 @@ module.exports = function () {
         password: "Yt14kk",
         dateOfBirth: "20020129",
         plan: "WhiteShark",
+        }
       },
       {
         id: 33,
         employed: true,
         licenseType: "A-IIIb",
         license: "F94887916",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "10003012",
         name: "Haydon",
         lastname: "Gantley",
@@ -473,13 +538,15 @@ module.exports = function () {
         password: "DjNZjeRCQNEx",
         dateOfBirth: "19931106",
         plan: "Shark",
+        }
       },
       {
         id: 34,
         employed: true,
         licenseType: "A-IIa",
         license: "U46642143",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "62689559",
         name: "Emmett",
         lastname: "Stapels",
@@ -487,13 +554,15 @@ module.exports = function () {
         password: "Gz4YmiA8Bd",
         dateOfBirth: "19820805",
         plan: "Sharky",
+        }
       },
       {
         id: 35,
         employed: true,
         licenseType: "A-I",
         license: "T93167272",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "54821428",
         name: "Knox",
         lastname: "Joannidi",
@@ -501,13 +570,15 @@ module.exports = function () {
         password: "Nlnc6oZ",
         dateOfBirth: "19840425",
         plan: "Sharky",
+        }
       },
       {
         id: 36,
         employed: true,
         licenseType: "A-I",
         license: "N36961202",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "57161191",
         name: "Olvan",
         lastname: "Whitemarsh",
@@ -515,13 +586,15 @@ module.exports = function () {
         password: "p8rlA9H",
         dateOfBirth: "20001121",
         plan: "Sharky",
+        }
       },
       {
         id: 37,
         employed: false,
         licenseType: "A-I",
         license: "K99321235",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "85311103",
         name: "Rodolph",
         lastname: "Lippo",
@@ -529,13 +602,15 @@ module.exports = function () {
         password: "LUOYr6E18",
         dateOfBirth: "19850830",
         plan: "Sharky",
+        }
       },
       {
         id: 38,
         employed: false,
         licenseType: "A-IIIb",
         license: "U07543219",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "20523261",
         name: "Pail",
         lastname: "Wyllt",
@@ -543,13 +618,15 @@ module.exports = function () {
         password: "0gUrrnzYKw",
         dateOfBirth: "19840902",
         plan: "Sharky",
+        }
       },
       {
         id: 39,
         employed: true,
         licenseType: "A-IIIa",
         license: "F86670830",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "44315495",
         name: "Rob",
         lastname: "Kenton",
@@ -557,13 +634,15 @@ module.exports = function () {
         password: "yN3rVHD43",
         dateOfBirth: "19950916",
         plan: "Shark",
+        }
       },
       {
         id: 40,
         employed: true,
         licenseType: "A-I",
         license: "E85831471",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "33880745",
         name: "Shell",
         lastname: "Cowans",
@@ -571,13 +650,15 @@ module.exports = function () {
         password: "wSYZls",
         dateOfBirth: "19860717",
         plan: "Shark",
+        }
       },
       {
         id: 41,
         employed: false,
         licenseType: "A-IIIb",
         license: "V27070962",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "30977880",
         name: "Andrew",
         lastname: "Whitworth",
@@ -585,13 +666,15 @@ module.exports = function () {
         password: "AJog9sgjnZCj",
         dateOfBirth: "19850514",
         plan: "Sharky",
+        }
       },
       {
         id: 42,
         employed: true,
         licenseType: "A-I",
         license: "B73293082",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "94721361",
         name: "Nevil",
         lastname: "Emlen",
@@ -599,13 +682,15 @@ module.exports = function () {
         password: "55R3yOf",
         dateOfBirth: "19980124",
         plan: "Sharky",
+        }
       },
       {
         id: 43,
         employed: true,
         licenseType: "A-I",
         license: "G73004702",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "99317407",
         name: "Mord",
         lastname: "McGourty",
@@ -613,13 +698,15 @@ module.exports = function () {
         password: "hpr7QPJ",
         dateOfBirth: "19950710",
         plan: "Sharky",
+        }
       },
       {
         id: 44,
         employed: false,
         licenseType: "A-IIa",
         license: "F17437469",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "51694269",
         name: "Jan",
         lastname: "Domino",
@@ -627,13 +714,15 @@ module.exports = function () {
         password: "QUs9r9gYbbp",
         dateOfBirth: "19850225",
         plan: "Sharky",
+        }
       },
       {
         id: 45,
         employed: true,
         licenseType: "A-I",
         license: "I69784990",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "74783588",
         name: "Cody",
         lastname: "Sommerville",
@@ -641,13 +730,15 @@ module.exports = function () {
         password: "zssLre3X5nCw",
         dateOfBirth: "19951123",
         plan: "Shark",
+        }
       },
       {
         id: 46,
         employed: false,
         licenseType: "A-IIb",
         license: "F08590305",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "36205127",
         name: "Conrade",
         lastname: "Josovitz",
@@ -655,13 +746,15 @@ module.exports = function () {
         password: "juxnmOFiFWl",
         dateOfBirth: "19960723",
         plan: "Sharky",
+        }
       },
       {
         id: 47,
         employed: true,
         licenseType: "A-IIb",
         license: "K31638540",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "98944740",
         name: "Maison",
         lastname: "Thorburn",
@@ -669,13 +762,15 @@ module.exports = function () {
         password: "vTRE1WMCsCuy",
         dateOfBirth: "19860717",
         plan: "WhiteShark",
+        }
       },
       {
         id: 48,
         employed: true,
         licenseType: "A-I",
         license: "P21042926",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "59565071",
         name: "Weylin",
         lastname: "Burcher",
@@ -683,13 +778,15 @@ module.exports = function () {
         password: "Gwpwo9X1",
         dateOfBirth: "19890626",
         plan: "Sharky",
+        }
       },
       {
         id: 49,
         employed: false,
         licenseType: "A-IIb",
         license: "N38512733",
-        rol: "Driver",
+        user :{
+          rol: "Driver",
         dni: "16205152",
         name: "Urbain",
         lastname: "Towne",
@@ -697,13 +794,15 @@ module.exports = function () {
         password: "j6tO4hsHv",
         dateOfBirth: "19961223",
         plan: "WhiteShark",
+        }
       },
       {
         id: 50,
         employed: true,
         licenseType: "A-IIIb",
         license: "S25144440",
-        rol: "Employer",
+        user :{
+          rol: "Employer",
         dni: "21098989",
         name: "Collin",
         lastname: "Signori",
@@ -711,6 +810,7 @@ module.exports = function () {
         password: "aDygc3Ez",
         dateOfBirth: "19981120",
         plan: "Shark",
+        }
       },
     ],
   };

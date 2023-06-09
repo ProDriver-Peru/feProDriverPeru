@@ -2,98 +2,79 @@
 <div class="mat-card-flex">
   <div *ngFor="let driver of this.shownDrivers">
     <mat-card class="mat-card">
-      <mat-card-header>
-        <mat-card-title>{{ driver.name }} {{ driver.lastname }}</mat-card-title>
-        <mat-card-subtitle>
-          Licencia: {{ driver.licenseType }} |
-
-         </mat-card-subtitle
-        >
-      </mat-card-header>
-      <img
-        mat-card-image
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAoeO_LdlLndsGi9o-jbIbS7cqG5fgV5uP6Q&usqp=CAU"
-        alt="User's photo"
-      />
-      <br />
-      <mat-card-content>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-          convallis tortor nunc. Mauris lobortis pulvinar nisi. Sed fringilla
-          tortor ut orci volutpat viverra. Sed a augue a turpis varius tincidunt
-          vitae eu lectus.
-        </p>
-      </mat-card-content>
+      <div class="mat-card-f1">
+        <div class="mat-card-f2">
+          <mat-card-header>
+            <mat-card-title
+              >{{ driver.user.name }} {{ driver.user.lastname }}</mat-card-title
+            >
+            <mat-card-subtitle>
+              Licencia: {{ driver.licenseType }} | FN:
+              {{ driver.user.dateOfBirth }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <br />
+          <mat-card-content>
+            <div class="description">
+              <p class="text-justify">
+                <!-- Falta justificar -->
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas convallis tortor nunc. Mauris lobortis pulvinar nisi.
+                Sed fringilla tortor ut orci volutpat viverra. Sed a augue a
+                turpis varius tincidunt vitae eu lectus. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit. Maecenas convallis tortor
+                nunc. Mauris lobortis pulvinar nisi. Sed fringilla tortor ut
+                orci volutpat viverra. Sed a augue a turpis varius tincidunt
+                vitae eu lectus.
+              </p>
+            </div>
+          </mat-card-content>
+        </div>
+        <div class="card-image-container">
+          <img
+            class="card-image"
+            mat-card-image
+            src="https://media.istockphoto.com/id/1287598154/es/foto/foto-del-pasaporte-del-hombre-latinoamericano-con-barba.jpg?s=612x612&w=0&k=20&c=IXVrzE0ylWr0gwI4nqZkMnzZahE3Ej4psUNyTpvptGw="
+            alt="User's photo"
+          />
+        </div>
+      </div>
       <div style="flex: 1 1 auto"></div>
       <span></span>
       <mat-card-actions align="end">
-        <button [class.mat-elevation-z0]="true" mat-flat-button color="accent">
+        <button
+          [class.mat-elevation-z0]="true"
+          mat-flat-button
+          color="accent"
+          style="margin: 0px 20px 20px 0px"
+        >
           Ver perfil
         </button>
       </mat-card-actions>
     </mat-card>
   </div>
-</div>
-
-
-
-
-
-<!--
-<div>
-  <h1>Inicio</h1>
-
-  <section class="seccion">
-    <div class="actions">
-      <button
-        type="submit"
-        class="search-button"
-        routerLink="/home/buscarPropuesta"
-      >
-        <a> Buscar </a>
-        <i class="fa fa-search"></i>
+  <div class="home-flex">
+    <mat-radio-group class="mat-radio-g-1" [(ngModel)]="selectedValue" (change)="refresh()">
+      <button mat-icon-button class="nv-btn" (click)="nvBefore()">
+        <mat-icon>navigate_before</mat-icon>
       </button>
-    </div>
-    <div class="content">
-      <article class="ficha">
-        <p class="driver-name">
-          name
-          lastName
-        </p>
-        <div class="descr">
-          <div class="contenido">
-            descripcion
-          </div>
-          <img src="/assets/images/Postulante1.jpeg" />
-        </div>
-        <button class="boton-ver-perfil">Ver perfil</button>
-      </article>
-      <article class="ficha">
-        <p class="driver-name">
-          name
-          lastName
-        </p>
-        <div class="descr">
-          <div class="contenido">
-            descripcion
-          </div>
-          <img src="/assets/images/Postulante2.jpeg" />
-        </div>
-        <button class="boton-ver-perfil">Ver perfil</button>
-      </article>
-    </div>
-
-    <mat-radio-group style="margin-bottom: 20px" [(ngModel)]="selectedValue">
       <mat-radio-button value="1"></mat-radio-button>
       <mat-radio-button value="2"></mat-radio-button>
       <mat-radio-button value="3"></mat-radio-button>
       <mat-radio-button value="4"></mat-radio-button>
+      <mat-radio-button value="5"></mat-radio-button>
+      <button mat-icon-button class="nv-btn" (click)="nvNext()">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
     </mat-radio-group>
-
-    <button class="newcreate" routerLink="/home/new-job-offer">
+    <button
+      mat-raised-button
+      color="accent"
+      routerLink="/home/new-job-offer"
+      style="margin: 20px"
+    >
       <a> Crear propuesta laboral </a>
-      <i class="fa fa-square-plus" style="font-size: 15px"></i>
+      <mat-icon fontIcon="add-box"></mat-icon>
     </button>
-  </section>
+  </div>
 </div>
--->
