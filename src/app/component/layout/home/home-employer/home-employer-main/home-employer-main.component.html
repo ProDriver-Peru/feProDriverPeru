@@ -1,4 +1,12 @@
 <h1>Inicio</h1>
+<div class="home-flex">
+
+<div class="home-actions">
+<div><span>wa</span></div>
+<button mat-raised-button color="primary">
+  Buscar <mat-icon>search</mat-icon>
+</button>
+</div>
 <div class="mat-card-flex">
   <div *ngFor="let driver of this.shownDrivers">
     <mat-card class="mat-card">
@@ -53,28 +61,33 @@
       </mat-card-actions>
     </mat-card>
   </div>
-  <div class="home-flex">
-    <mat-radio-group class="mat-radio-g-1" [(ngModel)]="selectedValue" (change)="refresh()">
-      <button mat-icon-button class="nv-btn" (click)="nvBefore()">
-        <mat-icon>navigate_before</mat-icon>
-      </button>
-      <mat-radio-button value="1"></mat-radio-button>
-      <mat-radio-button value="2"></mat-radio-button>
-      <mat-radio-button value="3"></mat-radio-button>
-      <mat-radio-button value="4"></mat-radio-button>
-      <mat-radio-button value="5"></mat-radio-button>
-      <button mat-icon-button class="nv-btn" (click)="nvNext()">
-        <mat-icon>navigate_next</mat-icon>
-      </button>
-    </mat-radio-group>
-    <button
-      mat-raised-button
-      color="accent"
-      routerLink="/home/new-job-offer"
-      style="margin: 20px"
-    >
-      <a> Crear propuesta laboral </a>
-      <mat-icon fontIcon="add-box"></mat-icon>
+</div>
+<div class="home-rb-flex">
+  <mat-radio-group
+    class="mat-radio-g-1"
+    [(ngModel)]="selectedValue"
+    (change)="refresh()"
+  >
+    <button mat-icon-button class="nv-btn" (click)="nvBefore()">
+      <mat-icon>navigate_before</mat-icon>
     </button>
-  </div>
+    <mat-radio-button value="1"></mat-radio-button>
+    <mat-radio-button value="2"></mat-radio-button>
+    <mat-radio-button value="3"></mat-radio-button>
+    <mat-radio-button value="4"></mat-radio-button>
+    <mat-radio-button value="5"></mat-radio-button>
+    <button mat-icon-button class="nv-btn" (click)="nvNext()">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </mat-radio-group>
+  <button
+    mat-raised-button
+    color="accent"
+    routerLink="/home/new-job-offer"
+    style="margin: 20px"
+  >
+    <a> Crear propuesta laboral </a>
+    <mat-icon fontIcon="add-box"></mat-icon>
+  </button>
+</div>
 </div>

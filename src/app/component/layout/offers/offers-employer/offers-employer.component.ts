@@ -11,7 +11,7 @@ import { OfferService } from 'src/app/service/offer.service';
 })
 export class OffersEmployerComponent implements OnInit{
   lista: Offer[] = [];
-  displayedColumns: string[] = ['id', 'description', 'licenseTypeRequired', 'experienceYearsRequired', 'appliers', 'vehicle', 'idEmployer'];
+  displayedColumns: string[] = ['id', 'description', 'licenseTypeRequired', 'experienceYearsRequired', 'appliers', 'vehicle'];
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator : MatPaginator;

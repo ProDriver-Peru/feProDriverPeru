@@ -1,0 +1,44 @@
+<div>
+  <form [formGroup]="form" (submit)="submit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo Electrónico</mat-label>
+      <input
+        matInput
+        placeholder="example@prodriver.com"
+        formControlName="id"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput required formControlName="password" />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Selecciona un rol</mat-label>
+      <mat-select [disabled]="">
+        <mat-option value="option1">Conductor</mat-option>
+        <mat-option value="option3">Empleador</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>DNI</mat-label>
+      <input matInput required formControlName="dni" />
+    </mat-form-field>
+    <br />
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput required placeholder="John Doe" formControlName="name" />
+    </mat-form-field>
+    <br />
+    <br />
+    <div>
+      <button mat-raised-button type="submit" color="primary">Aceptar</button>
+      <button mat-raised-button color="accent" routerLink="/login">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

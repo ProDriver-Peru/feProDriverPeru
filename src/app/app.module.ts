@@ -30,6 +30,7 @@ import { HomeEmployerMainComponent } from './component/layout/home/home-employer
 import { HomeDriverMainComponent } from './component/layout/home/home-driver/home-driver-main/home-driver-main.component';
 import { NewJobOfferComponent } from './component/layout/home/home-employer/new-job-offer/new-job-offer.component';
 import { MyProfileComponent } from './component/layout/my-profile/my-profile.component';
+import { RegisterComponent } from './component/register/register.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { MyProfileComponent } from './component/layout/my-profile/my-profile.com
     HomeDriverMainComponent,
     NewJobOfferComponent,
     MyProfileComponent,
+    RegisterComponent,
   ],
   imports: [
     AngularMaterialModule,

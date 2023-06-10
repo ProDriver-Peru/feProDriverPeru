@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -39,6 +40,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSortModule,
     MatDividerModule,
     MatPaginatorModule,
+    MatSelectModule
   ],
   exports: [
     MatToolbarModule,
@@ -58,6 +60,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSortModule,
     MatDividerModule,
     MatPaginatorModule,
+    MatSelectModule
   ],
 })
 export class AngularMaterialModule {}

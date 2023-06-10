@@ -21,5 +21,9 @@ export class AuthService {
     user.password = password;
     return true;
   }
+  register(user: User){
+    return this.http.post<User[]>(this.urlAuth,user);
+  }
+
 
 }
