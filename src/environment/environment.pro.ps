@@ -1,4 +1,4 @@
 export const environment={
   production:true,
-  base: 'https://testprodriverperu.azurewebsites.net/'
+  base: 'https://prodriverperu.azurewebsites.net/'
 }
