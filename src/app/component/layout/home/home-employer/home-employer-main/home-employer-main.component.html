@@ -1,93 +1,90 @@
 <h1>Inicio</h1>
 <div class="home-flex">
-
-<div class="home-actions">
-<div><span>wa</span></div>
-<button mat-raised-button color="primary">
-  Buscar <mat-icon>search</mat-icon>
-</button>
-</div>
-<div class="mat-card-flex">
-  <div *ngFor="let driver of this.shownDrivers">
-    <mat-card class="mat-card">
-      <div class="mat-card-f1">
-        <div class="mat-card-f2">
-          <mat-card-header>
-            <mat-card-title
-              >{{ driver.user.name }} {{ driver.user.lastname }}</mat-card-title
-            >
-            <mat-card-subtitle>
-              Licencia: {{ driver.licenseType }} | FN:
-              {{ driver.user.dateOfBirth }}
-            </mat-card-subtitle>
-          </mat-card-header>
-          <br />
-          <mat-card-content>
-            <div class="description">
-              <p class="text-justify">
-                <!-- Falta justificar -->
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas convallis tortor nunc. Mauris lobortis pulvinar nisi.
-                Sed fringilla tortor ut orci volutpat viverra. Sed a augue a
-                turpis varius tincidunt vitae eu lectus. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Maecenas convallis tortor
-                nunc. Mauris lobortis pulvinar nisi. Sed fringilla tortor ut
-                orci volutpat viverra. Sed a augue a turpis varius tincidunt
-                vitae eu lectus.
-              </p>
-            </div>
-          </mat-card-content>
-        </div>
-        <div class="card-image-container">
-          <img
-            class="card-image"
-            mat-card-image
-            src="https://media.istockphoto.com/id/1287598154/es/foto/foto-del-pasaporte-del-hombre-latinoamericano-con-barba.jpg?s=612x612&w=0&k=20&c=IXVrzE0ylWr0gwI4nqZkMnzZahE3Ej4psUNyTpvptGw="
-            alt="User's photo"
-          />
-        </div>
-      </div>
-      <div style="flex: 1 1 auto"></div>
-      <span></span>
-      <mat-card-actions align="end">
-        <button
-          [class.mat-elevation-z0]="true"
-          mat-flat-button
-          color="accent"
-          style="margin: 0px 20px 20px 0px"
-        >
-          Ver perfil
-        </button>
-      </mat-card-actions>
-    </mat-card>
+  <div class="home-actions">
+    <div><span></span></div>
+    <button mat-raised-button color="primary">
+      Buscar <mat-icon>search</mat-icon>
+    </button>
   </div>
-</div>
-<div class="home-rb-flex">
-  <mat-radio-group
-    class="mat-radio-g-1"
-    [(ngModel)]="selectedValue"
-    (change)="refresh()"
-  >
-    <button mat-icon-button class="nv-btn" (click)="nvBefore()">
-      <mat-icon>navigate_before</mat-icon>
+  <div class="mat-card-flex">
+    <div *ngFor="let driver of this.shownDrivers">
+      <mat-card class="mat-card">
+        <div class="mat-card-f1">
+          <div class="mat-card-f2">
+            <mat-card-header>
+              <mat-card-title
+                >{{ driver.user.name }}
+                {{ driver.user.lastname }}</mat-card-title
+              >
+              <mat-card-subtitle>
+                Licencia: {{ driver.licenseType }} | FN:
+                {{ driver.user.dateOfBirth }}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <br />
+            <mat-card-content>
+              <div class="description">
+                <p class="text-justify">
+                  <!-- Falta justificar -->
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Maecenas convallis tortor nunc. Mauris lobortis pulvinar nisi.
+                  Sed fringilla tortor ut orci volutpat viverra. Sed a augue a
+                  turpis varius tincidunt vitae eu lectus. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit. Maecenas convallis tortor
+                  nunc. Mauris lobortis pulvinar nisi. Sed fringilla tortor ut
+                  orci volutpat viverra. Sed a augue a turpis varius tincidunt
+                  vitae eu lectus.
+                </p>
+              </div>
+            </mat-card-content>
+          </div>
+          <div class="card-image-container">
+            <img
+              class="card-image"
+              mat-card-image
+              src="https://media.istockphoto.com/id/1287598154/es/foto/foto-del-pasaporte-del-hombre-latinoamericano-con-barba.jpg?s=612x612&w=0&k=20&c=IXVrzE0ylWr0gwI4nqZkMnzZahE3Ej4psUNyTpvptGw="
+              alt="User's photo"
+            />
+          </div>
+        </div>
+        <div style="flex: 1 1 auto"></div>
+        <span></span>
+        <mat-card-actions align="end">
+          <button
+            [class.mat-elevation-z0]="true"
+            mat-flat-button
+            color="accent"
+            style="margin: 0px 20px 20px 0px"
+          >
+            Ver perfil
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="home-rb-flex">
+    <mat-radio-group
+      class="mat-radio-g-1"
+      [(ngModel)]="selectedValue"
+      (change)="refresh()"
+    >
+      <button mat-icon-button class="nv-btn" (click)="nvBefore()">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+      <mat-radio-button *ngFor="let i of index" value="{{i+1}}"></mat-radio-button>
+      <button mat-icon-button class="nv-btn" (click)="nvNext()">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+    </mat-radio-group>
+    <button
+      mat-raised-button
+      color="accent"
+      routerLink="/home/new-job-offer"
+      style="margin: 20px"
+    >
+      <a> Crear propuesta laboral </a>
+      <mat-icon fontIcon="add-box"></mat-icon>
     </button>
-    <mat-radio-button value="1"></mat-radio-button>
-    <mat-radio-button value="2"></mat-radio-button>
-    <mat-radio-button value="3"></mat-radio-button>
-    <mat-radio-button value="4"></mat-radio-button>
-    <mat-radio-button value="5"></mat-radio-button>
-    <button mat-icon-button class="nv-btn" (click)="nvNext()">
-      <mat-icon>navigate_next</mat-icon>
-    </button>
-  </mat-radio-group>
-  <button
-    mat-raised-button
-    color="accent"
-    routerLink="/home/new-job-offer"
-    style="margin: 20px"
-  >
-    <a> Crear propuesta laboral </a>
-    <mat-icon fontIcon="add-box"></mat-icon>
-  </button>
-</div>
+  </div>
 </div>

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { User } from 'src/model/User';
+import { MatSelect } from '@angular/material/select';
 
 @Component({
   selector: 'app-register',
@@ -13,6 +14,8 @@ export class RegisterComponent {
   form: FormGroup = new FormGroup({});
   user: User = new User();
   mensaje: string = "";
+  step: number = 0;
+  @ViewChild(MatSelect) select: MatSelect;
 
   constructor(private authService:AuthService, private router:Router, private route:ActivatedRoute){}
 
@@ -22,17 +25,15 @@ export class RegisterComponent {
 
       id: new FormControl('',Validators.required),
       password: new FormControl('',Validators.required),
-      rol: new FormControl(),
+      rol: new FormControl('', Validators.required),
 
       dni: new FormControl('',Validators.required),
-      name: new FormControl('',Validators.required),
+      firstname: new FormControl('',Validators.required),
       lastName: new FormControl('',Validators.required),
       email: new FormControl('',Validators.required),
 
       ruc: new FormControl('',Validators.required)
-
     })
-
   }
 
   submit():void{
@@ -41,7 +42,8 @@ export class RegisterComponent {
     this.user.password = this.form.value['password'];
     this.user.rol = "Reclutador"; //this.form.value['rol'];
 
-    this.user.name = this.form.value['name'];
+    this.user.name = this.form.value['firstname'];
+    this.user.lastname = this.form.value['lastname'];
     this.user.email = this.form.value['email'];
 
 
@@ -57,4 +59,14 @@ export class RegisterComponent {
     }
 
   }
+  next():void{
+    this.step++;
+    console.log(this.select.value);
+
+  }
+
+  back():void{
+    this.step--;
+  }
+
 }

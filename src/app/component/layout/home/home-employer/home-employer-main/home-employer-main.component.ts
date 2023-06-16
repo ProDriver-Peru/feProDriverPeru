@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Driver } from 'src/model/Driver';
 import { DriverService } from 'src/app/service/driver.service';
-//import { MatRadioButton } from '@angular/material/radio';
+import { MatRadioButton } from '@angular/material/radio';
 
 
 @Component({
@@ -12,23 +12,29 @@ import { DriverService } from 'src/app/service/driver.service';
 export class HomeEmployerMainComponent implements OnInit{
   public maxList: any = "25";
   public selectedValue: any = "1";
+  public index: number[];
   public newJobOffer: boolean = false;
   public listDrivers: Driver[] = [];
   public shownDrivers: Driver[] = [];
-  //@ViewChild(MatRadioButton) radio: MatRadioButton;
+  @ViewChild(MatRadioButton) radio: MatRadioButton;
 
   constructor(private driverService: DriverService) {
   }
   ngOnInit(): void {
     this.driverService.getListDrivers().subscribe((data: Driver[]) => {
-      this.listDrivers=data;
-      this.shownDrivers = this.listDrivers.slice(0,2);
+      if(data.length>24){
+        this.listDrivers = data.slice(0,24);
+        this.index = Array.from(Array(Math.ceil(this.listDrivers.length/2)).keys());
+      }
+      else{
+        this.listDrivers=data;
+        this.index = Array.from(Array(Math.ceil(this.listDrivers.length/2)).keys());
+      }
+      if(this.listDrivers.length>=2){
+        this.shownDrivers = this.listDrivers.slice(0,2);
+      }
     });
-
-
   }
-
-
 
   openNewJobOfferDialog() {
     this.newJobOffer = true;
@@ -44,9 +50,8 @@ export class HomeEmployerMainComponent implements OnInit{
 
   }
   nvNext(){
-    //(this.selectedValue as number)++;
-    //this.selectedValue = (this.selectedValue as number);
-    console.log(this.selectedValue);
+
+
 
   }
 
