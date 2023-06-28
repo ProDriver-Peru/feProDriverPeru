@@ -16,11 +16,15 @@ export class JobOfferService {
     constructor(private http:HttpClient) { }
 
     getListOffersByIdEmployer(idEmployer: number):Observable<any>{
-      return this.http.get<JobOffer[]>(`${this.urlOffer}/employer/${idEmployer}`);
+      return this.http.get<JobOffer[]>(`${this.urlOffer}/idEmployer/${idEmployer}`);
     }
 
     postOffer(jobOffer:JobOffer):Observable<any>{
       return this.http.post<JobOffer>(this.urlOffer, jobOffer);
+    }
+
+    deleteOffer(id: Number):Observable<any>{
+      return this.http.delete<JobOffer>(`${this.urlOffer}/${id}`);
     }
 
 }

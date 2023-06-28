@@ -23,4 +23,6 @@ export class OfferService {
       return this.http.post<JobOffer>(this.urlOffer, jobOffer);
     }
 
+    
+
 }

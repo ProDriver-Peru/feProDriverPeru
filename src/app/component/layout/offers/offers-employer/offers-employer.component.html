@@ -19,18 +19,18 @@
         </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="licenseTypeRequired">
+      <ng-container matColumnDef="licensetyperequired">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           Licencia
         </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.licenseTypeRequired }} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{ element.licensetyperequired }} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="experienceYearsRequired">
+      <ng-container matColumnDef="experienceyears">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           Años de experiencia
         </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.experienceYearsRequired }} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{ element.experienceyears }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="appliers">
@@ -54,6 +54,20 @@
         <mat-cell *matCellDef="let element"> {{ element.idEmployer }} </mat-cell>
       </ng-container>
 
+      <ng-container matColumnDef="location">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Locación
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.location }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="area">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Área
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.area }} </mat-cell>
+      </ng-container>
+      
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
