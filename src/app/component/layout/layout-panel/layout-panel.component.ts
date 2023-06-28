@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from 'src/model/User';
 
 @Component({
   selector: 'app-layout-panel',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout-panel.component.css']
 })
 export class LayoutPanelComponent {
+    user: User = JSON.parse(localStorage.getItem('user') || '{}');
+    constructor() { }
+    ngOnInit(): void {
 
+    }
 }

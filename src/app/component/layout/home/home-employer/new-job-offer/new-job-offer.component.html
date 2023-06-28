@@ -1,39 +1,36 @@
 <div class="proposal-form">
-
-      <div class="proposal-form-form">
-        <form [formGroup]="form" (submit)="aceptar()">
-          <mat-form-field class="example-full-width">
-            <mat-label>Username</mat-label>
-            <input matInput placeholder="Código" formControlName="">
-          </mat-form-field>
-
-          <br>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Descripción</mat-label>
-            <textarea matInput required placeholder="Descripción" ></textarea>
-          </mat-form-field>
-
-          <br>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Tipo de Licencia</mat-label>
-            <input matInput required placeholder="Licencia" >
-          </mat-form-field>
-
-          <br>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Año de experiencia</mat-label>
-            <input matInput required placeholder="Año de experiencia" >
-          </mat-form-field>
-          <br>
-
-          <button mat-raised-button class="btn" type="submit" >Publicar</button>
-
-          <p>{{mensaje}}</p>
-
-        </form>
-      </div>
-
-    </div>
+  <div class="proposal-form-form">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="description">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="description" />
+      </mat-form-field>
+      <mat-form-field class="licensetyperequired">
+        <mat-label>Tipo de Licencia</mat-label>
+        <input matInput formControlName="licensetyperequired" />
+      </mat-form-field>
+      <mat-form-field class="experienceyears">
+        <mat-label>Años de experiencia</mat-label>
+        <input matInput formControlName="experienceyears" />
+      </mat-form-field>
+      <mat-form-field class="vehicle">
+        <mat-label>Vehículo</mat-label>
+        <input matInput formControlName="vehicle" />
+      </mat-form-field>
+      <mat-form-field class="arrangement">
+        <mat-label>Arrangement</mat-label>
+        <input matInput formControlName="arrangement" />
+      </mat-form-field>
+      <mat-form-field class="location">
+        <mat-label>Locación</mat-label>
+        <input matInput formControlName="location" />
+      </mat-form-field>
+      <mat-form-field class="area">
+        <mat-label>Area</mat-label>
+        <input matInput formControlName="area" />
+      </mat-form-field>
+      <button mat-flat-button color="accent" class="btn" type="submit">Publicar</button>
+      <p>{{ mensaje }}</p>
+    </form>
+  </div>
+</div>
