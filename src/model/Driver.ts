@@ -2,10 +2,10 @@ import { User } from './User';
 
 export class Driver {
   id: number;
+  user: User = new User();
   employed: boolean;
   licenseType: string;
   license: string;
-  user: User = new User();
-
+  sector: string;
   constructor() {}
 }

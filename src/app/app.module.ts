@@ -32,7 +32,6 @@ import { NewJobOfferComponent } from './component/layout/home/home-employer/new-
 import { MyProfileComponent } from './component/layout/my-profile/my-profile.component';
 import { RegisterComponent } from './component/register/register.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

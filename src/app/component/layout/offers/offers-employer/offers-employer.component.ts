@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Offer } from 'src/model/Offer';
+import { JobOffer } from 'src/model/JobOffer';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -10,7 +10,7 @@ import { OfferService } from 'src/app/service/offer.service';
   styleUrls: ['./offers-employer.component.css']
 })
 export class OffersEmployerComponent implements OnInit{
-  lista: Offer[] = [];
+  lista: JobOffer[] = [];
   displayedColumns: string[] = ['id', 'description', 'licenseTypeRequired', 'experienceYearsRequired', 'appliers', 'vehicle'];
   dataSource = new MatTableDataSource();
 
@@ -21,7 +21,7 @@ export class OffersEmployerComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.offerService.getListOffers().subscribe(data=>{
+    this.offerService.getListOffersByIdEmployer(1).subscribe(data=>{
       this.dataSource.data=data;
     })
   }

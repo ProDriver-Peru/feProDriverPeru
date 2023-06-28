@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Driver } from 'src/model/Driver';
 import { DriverService } from 'src/app/service/driver.service';
-import { MatRadioButton } from '@angular/material/radio';
-
 
 @Component({
   selector: 'app-home-employer-main',
@@ -10,13 +8,12 @@ import { MatRadioButton } from '@angular/material/radio';
   styleUrls: ['./home-employer-main.component.css']
 })
 export class HomeEmployerMainComponent implements OnInit{
-  public maxList: any = "25";
+  public maxList: any = "24";
   public selectedValue: any = "1";
   public index: number[];
   public newJobOffer: boolean = false;
   public listDrivers: Driver[] = [];
   public shownDrivers: Driver[] = [];
-  @ViewChild(MatRadioButton) radio: MatRadioButton;
 
   constructor(private driverService: DriverService) {
   }
@@ -43,16 +40,9 @@ export class HomeEmployerMainComponent implements OnInit{
 
   }
 
-  refresh(){
-    this.shownDrivers = this.listDrivers.slice(this.selectedValue*2-2,this.selectedValue*2);
-  }
-  nvBefore(){
-
-  }
-  nvNext(){
-
-
-
+  refresh(page: number){
+    this.shownDrivers = this.listDrivers.slice(page*2-2,page*2);
+    this.selectedValue = page;
   }
 
 }

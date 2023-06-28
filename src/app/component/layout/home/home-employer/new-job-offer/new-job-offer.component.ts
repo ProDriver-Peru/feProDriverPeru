@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { Offer } from 'src/model/Offer';
+import { JobOffer } from 'src/model/JobOffer';
 
 @Component({
   selector: 'app-new-job-offer',
@@ -10,7 +10,7 @@ import { Offer } from 'src/model/Offer';
 })
 export class NewJobOfferComponent {
   form: FormGroup = new FormGroup({});
-  propuesta: Offer = new Offer();
+  propuesta: JobOffer = new JobOffer();
   mensaje: string = "";
   aceptar(){
 

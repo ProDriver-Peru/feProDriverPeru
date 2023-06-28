@@ -1,118 +1,138 @@
-<div class="register-body">
-  <form
-    [formGroup]="form"
-    (submit)="submit()"
-    class="form-flex register-form mat-elevation-z6"
-  >
-    <div class="brand-section">
-      <img style="margin-top: 0px" src="assets/images/logo144.png" alt="logo" />
-      <h2 style="color: #02abee; margin-bottom: 30px">ProDriver</h2>
-    </div>
-    <!--INICIAL-->
-    <mat-form-field class="register-input" [hidden]="step != 0">
-      <mat-label>Nombres</mat-label>
-      <input matInput formControlName="firstname" />
-    </mat-form-field>
-    <mat-form-field class="register-input" [hidden]="step != 0">
-      <mat-label>Apellidos</mat-label>
-      <input matInput formControlName="lastname" />
-    </mat-form-field>
-    <mat-form-field class="register-input" [hidden]="step != 0">
-      <mat-label>DNI</mat-label>
-      <input matInput required formControlName="dni" />
-    </mat-form-field>
-    <!--CONTINUAR-->
-    <mat-form-field class="register-input" [hidden]="step != 1">
-      <mat-label>Correo Electrónico</mat-label>
-      <input
-        matInput
-        placeholder="example@prodriver.com"
-        formControlName="id"
-      />
-    </mat-form-field>
-    <mat-form-field class="register-input" [hidden]="step != 1">
-      <mat-label>Contraseña</mat-label>
-      <input matInput required formControlName="password" />
-    </mat-form-field>
-    <mat-form-field *ngIf="step === 1">
-      <mat-label>Selecciona un rol</mat-label>
-      <mat-select required formControlName="rol">
-        <mat-option value="option1">Conductor</mat-option>
-        <mat-option value="option2">Empleador</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!--ROL-->
-    <!--EMPLOYER-->
-    <mat-form-field
-      class="register-input"
-      [hidden]="step != 2 || select.value != 'option1'"
-    >
-      <mat-label>Número de RUC</mat-label>
-      <input matInput [required] />
-    </mat-form-field>
-    <mat-form-field
-      class="register-input"
-      [hidden]="step != 2 || select.value != 'option1'"
-    >
-      <mat-label>Nombre de la empresa</mat-label>
-      <input matInput />
-    </mat-form-field>
-    <mat-form-field
-      class="register-input"
-      [hidden]="step != 2 || select.value != 'option2'"
-    >
-      <mat-label>Rubro</mat-label>
-      <input matInput />
-    </mat-form-field>
-    <!--DRIVER-->
-    <mat-form-field
-      class="register-input"
-      [hidden]="step != 2 || select.value != 'option2'"
-    >
-      <mat-label>Tipo de Licencia</mat-label>
-      <input matInput />
-    </mat-form-field>
-    <mat-form-field
-      class="register-input"
-      [hidden]="step != 2 || select.value != 'option2'"
-    >
-      <mat-label>N° de Licencia</mat-label>
-      <input matInput />
-    </mat-form-field>
-    <button
-      mat-raised-button
-      color="accent"
-      type="button"
-      (click)="next()"
-      *ngIf="step === 0 || step === 1 "
-    >
-      <mat-icon>check_circle</mat-icon>
-      Continuar
-    </button>
-    <button mat-raised-button type="submit" color="accent" *ngIf="step === 2">
-      <mat-icon>how_to_reg</mat-icon>
-      Registrase
-    </button>
-    <br />
-    <button
-      mat-button
-      class="mat-elevation-z2"
-      type="button"
-      color="warn"
-      routerLink="/login"
-      *ngIf="step === 0"
-    >
-      <mat-icon>cancel</mat-icon> Cancelar
-    </button>
-    <button
-      mat-button
-      class="mat-elevation-z2"
-      color="warn"
-      type="button"
-      (click)="back()"
-      *ngIf="step !== 0"
-    >
-      <mat-icon>navigate_before</mat-icon> Retroceder
-    </button>
-  </form>
+<!--BRAND SECTION-->
+<div class="brand-section">
+  <img style="margin-top: 0px" src="assets/images/logo144.png" alt="logo" />
+  <h2 style="color: #02abee; margin-bottom: 30px">ProDriver</h2>
 </div>
+
+<!--FORM 1-->
+<form [formGroup]="form1" (submit)="form1submit()" [hidden]="step != 1">
+  <mat-form-field class="register-input">
+    <mat-label>Nombres</mat-label>
+    <input matInput required="true" formControlName="firstname" />
+  </mat-form-field>
+  <mat-form-field class="register-input">
+    <mat-label>Apellidos</mat-label>
+    <input matInput required="true" formControlName="lastname" />
+  </mat-form-field>
+  <mat-form-field class="register-input">
+    <mat-label>DNI</mat-label>
+    <input matInput required="true" formControlName="dni" />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="accent"
+    type="submit"
+    [disabled]="!form1.valid"
+  >
+    <mat-icon>check_circle</mat-icon>
+    Continuar
+  </button>
+</form>
+
+<!--FORM 2-->
+<form [formGroup]="form2" (submit)="form2submit()" [hidden]="step != 2">
+  <mat-form-field class="register-input">
+    <mat-label>Correo Electrónico</mat-label>
+    <input
+      matInput
+      placeholder="example@prodriver.com"
+      formControlName="email"
+    />
+  </mat-form-field>
+  <mat-form-field class="register-input">
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="password" formControlName="password" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Selecciona un rol</mat-label>
+    <mat-select required formControlName="role">
+      <mat-option value="driver">Conductor</mat-option>
+      <mat-option value="employer">Empleador</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="accent"
+    type="submit"
+    [disabled]="!form2.valid"
+  >
+    <mat-icon>check_circle</mat-icon>
+    Continuar
+  </button>
+</form>
+
+<!--FORM 3-->
+<!--EMPLOYER-->
+<form [formGroup]="form3" (submit)="form3submit()" [hidden]="step != 3">
+  <!--EMPLOYER-->
+  <mat-form-field class="register-input">
+    <mat-label>Número de RUC</mat-label>
+    <input matInput formControlName="ruc" />
+  </mat-form-field>
+  <mat-form-field class="register-input">
+    <mat-label>Nombre de la empresa</mat-label>
+    <input matInput formControlName="companyname" />
+  </mat-form-field>
+  <mat-form-field class="register-input">
+    <mat-label>Sector</mat-label>
+    <input matInput formControlName="sector" />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="accent"
+    type="submit"
+    [disabled]="!form3.valid"
+  >
+    <mat-icon>check_circle</mat-icon>
+    Continuar
+  </button>
+</form>
+
+<!--FORM 4-->
+<!--DRIVER-->
+<form [formGroup]="form4" (submit)="form4submit()" [hidden]="step != 4">
+  <mat-form-field class="register-input">
+    <mat-label>Tipo de Licencia</mat-label>
+    <input matInput formControlName="licensetype" />
+  </mat-form-field>
+  <mat-form-field class="register-input">
+    <mat-label>N° de Licencia</mat-label>
+    <input matInput formControlName="licensenumber" />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    type="submit"
+    color="accent"
+    [disabled]="!form4.valid"
+  >
+    <mat-icon>how_to_reg</mat-icon>
+    Registrase
+  </button>
+</form>
+
+<!--BUTTONS CANCEL AND BACK
+
+  <button
+    mat-button
+    class="mat-elevation-z2"
+    type="button"
+    color="warn"
+    routerLink="/login"
+    *ngIf="step === 0"
+  >
+    <mat-icon>cancel</mat-icon> Cancelar
+  </button>
+
+  <button
+    mat-button
+    class="mat-elevation-z2"
+    color="warn"
+    type="button"
+    (click)="back()"
+    *ngIf="step !== 0"
+  >
+    <mat-icon>navigate_before</mat-icon> Retroceder
+  </button>
+
+    -->

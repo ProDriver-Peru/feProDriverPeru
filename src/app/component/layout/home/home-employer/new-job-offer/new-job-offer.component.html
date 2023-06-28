@@ -4,7 +4,7 @@
         <form [formGroup]="form" (submit)="aceptar()">
           <mat-form-field class="example-full-width">
             <mat-label>Username</mat-label>
-            <input matInput placeholder="Código" >
+            <input matInput placeholder="Código" formControlName="">
           </mat-form-field>
 
           <br>
@@ -27,7 +27,6 @@
             <mat-label>Año de experiencia</mat-label>
             <input matInput required placeholder="Año de experiencia" >
           </mat-form-field>
-
           <br>
 
           <button mat-raised-button class="btn" type="submit" >Publicar</button>

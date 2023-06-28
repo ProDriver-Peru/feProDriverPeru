@@ -1,6 +1,6 @@
 export class User {
   id: number;
-  rol: string;
+  role: string;
   dni: string;
   name: string;
   lastname: string;
@@ -8,6 +8,8 @@ export class User {
   password: string;
   dateOfBirth: string;
   plan: string;
+  description: string;
+  imageProfile: string;
 
   constructor() {}
 }
