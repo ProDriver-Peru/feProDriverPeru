@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { User } from 'src/model/User';
 import { Driver } from 'src/model/Driver';
 import { Employer } from 'src/model/Employer';
@@ -19,10 +19,14 @@ export class RegisterComponent {
   form3: FormGroup = new FormGroup({});
   form4: FormGroup = new FormGroup({});
   form5: FormGroup = new FormGroup({});
+  form6: FormGroup = new FormGroup({});
 
-  rol: string;
+  user: User = new User();
+
   driver: Driver = new Driver();
+
   employer: Employer = new Employer();
+
   mensaje: string = '';
   step: number = 1;
   @ViewChild(MatSelect) select: MatSelect;
@@ -30,13 +34,12 @@ export class RegisterComponent {
   constructor(
     private driverService: DriverService,
     private employerService: EmployerService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.form1 = new FormGroup({
-      firstname: new FormControl('', [
+      name: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]*$'),
         Validators.maxLength(50),
@@ -52,94 +55,94 @@ export class RegisterComponent {
         Validators.minLength(8),
         Validators.pattern('^[0-9]*$'),
       ]),
+      dateOfBirth: new FormControl('', Validators.required),
+      rol: new FormControl('', Validators.required),
     });
-
     this.form2 = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(8),
       ]),
-      rol: new FormControl('', Validators.required),
-      dateOfBirth: new FormControl('', Validators.required),
     });
     this.form3 = new FormGroup({
+      description: new FormControl('', Validators.required),
+      imageProfile: new FormControl('', Validators.required),
+    });
+    this.form4 = new FormGroup({
       ruc: new FormControl('', Validators.required),
       companyname: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]*$'),
       ]),
+      companyDescription: new FormControl('', Validators.required),
+      imageCompany: new FormControl('', Validators.required),
     });
-    this.form4 = new FormGroup({
+    this.form5 = new FormGroup({
       licensetype: new FormControl('', Validators.required),
       licensenumber: new FormControl('', Validators.required),
       sector: new FormControl('', Validators.required),
     });
-    this.form5 = new FormGroup({
-      description: new FormControl('', Validators.required),
-      imageProfile: new FormControl('', Validators.required),
-    });
-  }
-
-  next(): void {
-    this.step++;
-  }
-
-  back(): void {
-    this.step--;
+    this.form6 = new FormGroup({});
   }
 
   form1submit(): void {
+    this.user.name = this.form1.value.name;
+    this.user.lastName = this.form1.value.lastName;
+    this.user.dni = this.form1.value.dni;
+    this.user.dateOfBirth = this.form1.value.dateOfBirth;
+
+    this.user.rol = this.form1.value.rol;
+
     this.step++;
   }
-  form2submit(): void {
-    this.rol = this.form2.value.rol;
 
-    if (this.rol == 'driver') {
-      this.step = 4;
-    } else {
-      this.step = 3;
-    }
+  form2submit(): void {
+    this.user.password = this.form2.value.password;
+    this.user.email = this.form2.value.email;
+
+    this.step++;
   }
 
   form3submit(): void {
-    this.employer.user = this.returnUserData();
-    this.employer.ruc = this.form3.value.ruc;
-    this.employer.companyName = this.form4.value.companyname;
-    this.employer.user.dateOfBirth = this.form2.value.dateOfBirth;
-    this.employerService.registerEmployer(this.employer).subscribe((data) => {
-      this.router.navigate(['login']);
-      console.log(data);
-    });
+    this.user.description = this.form3.value.description;
+    this.user.imageProfile = this.form3.value.imageProfile;
+
+    console.log(this.user.rol);
+
+    if (this.user.rol == 'driver') {
+      this.driver.user = this.user;
+      this.step = 5;
+    } else if (this.user.rol == 'employer') {
+      this.employer.user = this.user;
+      this.step = 4;
+    }
   }
 
   form4submit(): void {
-    this.step++;
+    this.employer.ruc = this.form4.value.ruc;
+    this.employer.companyName = this.form4.value.companyname;
+    this.employer.companyDescription = this.form4.value.companyDescription;
+    this.employer.imageCompany = this.form4.value.imageCompany;
+    this.step = 6;
   }
-
   form5submit(): void {
-    this.driver.user = this.returnUserData();
-    this.driver.licensetype = this.form4.value.licensetype;
-    this.driver.license = this.form4.value.licensenumber;
-    this.driver.sector = this.form4.value.sector;
-    this.driver.user.dateOfBirth = this.form2.value.dateOfBirth;
-    this.driver.user.imageProfile = this.form5.value.imageProfile;
-    this.driver.user.description = this.form5.value.description;//https://i.imgur.com/tdi3NGa.png
-
-    this.driverService.registerDriver(this.driver).subscribe((data) => {
-      this.router.navigate(['login']);
-      console.log(data);
-    });
+    this.driver.user = this.user;
+    this.driver.licensetype = this.form5.value.licensetype;
+    this.driver.license = this.form5.value.licensenumber;
+    this.driver.sector = this.form5.value.sector;
+    this.step = 6;
   }
+  form6submit(): void {
 
-  returnUserData(): User {
-    let user: User = new User();
-    user.name = this.form1.value.firstname;
-    user.lastName = this.form1.value.lastName;
-    user.dni = this.form1.value.dni;
-    user.email = this.form2.value.email;
-    user.password = this.form2.value.password;
-    user.rol = this.form2.value.rol;
-    return user;
+    if (this.user.rol == 'driver') {
+      this.driverService.registerDriver(this.driver).subscribe((data) => {
+        this.router.navigate(['login']);
+      });
+    } else if (this.user.rol == 'employer') {
+      this.employerService.registerEmployer(this.employer).subscribe((data) => {
+        this.router.navigate(['login']);
+      });
+    }
   }
 }

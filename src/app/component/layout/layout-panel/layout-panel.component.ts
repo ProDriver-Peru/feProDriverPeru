@@ -7,5 +7,5 @@ import { User } from 'src/model/User';
   styleUrls: ['./layout-panel.component.css'],
 })
 export class LayoutPanelComponent {
-  user: User = JSON.parse(localStorage.getItem('user') || '{}');
+  user: User = JSON.parse(localStorage.getItem('userLogged') || '{}');
 }

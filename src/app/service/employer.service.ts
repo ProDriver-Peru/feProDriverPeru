@@ -7,30 +7,26 @@ import { Observable } from 'rxjs';
 const baseUrl = environment.base;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployerService {
+  private urlEmployer = `${baseUrl}/employer`;
+  constructor(private http: HttpClient) {}
 
-    private urlEmployer = `${baseUrl}/employer`;
-    constructor(private http:HttpClient) { }
+  getListEmployers(): Observable<any> {
+    return this.http.get<Employer[]>(this.urlEmployer);
+  }
+  insertEmployer(employer: Employer): Observable<any> {
+    return this.http.post<Employer>(this.urlEmployer, employer);
+  }
+  getEmployerById(id: number): Observable<any> {
+    return this.http.get<Employer>(this.urlEmployer + '/' + id);
+  }
+  registerEmployer(employer: Employer): Observable<any> {
+    employer.user.rol = 'employer';
+    employer.user.description = 'active';
 
-    getListEmployers():Observable<any>{
-      return this.http.get<Employer[]>(this.urlEmployer);
-    }
-    insertEmployer(employer:Employer):Observable<any>{
-      return this.http.post<Employer>(this.urlEmployer,employer);
-    }
-    getEmployerById(id:number):Observable<any>{
-      return this.http.get<Employer>(this.urlEmployer+"/"+id);
-    }
-    registerEmployer(employer:Employer):Observable<any>{
-      employer.user.plan="sharky";
-      employer.user.description="description";
-      employer.user.imageProfile="https://i.imgur.com/tdi3NGa.png";
-      employer.imageCompany="https://i.imgur.com/tdi3NGa.png";
-      employer.user.rol="employer";
-
-      console.log(employer);
-      return this.http.post<Employer>(this.urlEmployer,employer);
-    }
+    console.log(employer);
+    return this.http.post<Employer>(this.urlEmployer, employer);
+  }
 }

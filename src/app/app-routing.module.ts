@@ -14,6 +14,7 @@ import { MyProfileComponent } from './component/layout/my-profile/my-profile.com
 import { OffersEmployerComponent } from './component/layout/offers/offers-employer/offers-employer.component';
 import { SearchComponent } from './component/layout/search/search.component';
 import { RegisterComponent } from './component/register/register.component';
+import { AuthService } from './service/auth.service';
 
 const routes: Routes = [
   {
@@ -35,7 +36,7 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        canActivate: [],
+        canActivate: [AuthService],
         children: [
           {
             path: '',
@@ -81,6 +82,11 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  }
 ];
 
 @NgModule({
