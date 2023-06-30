@@ -39,11 +39,10 @@
       <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
       Acerca de
     </a>
-    <a mat-menu-item>
+    <a mat-menu-item (click)="logout()">
       <mat-icon
         aria-hidden="false"
         fontIcon="logout"
-        (click)="logout()"
       ></mat-icon>
       Cerrar sesión
     </a>

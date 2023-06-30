@@ -39,9 +39,10 @@ export class LayoutMenuComponent implements OnInit {
   }
 
   logout(): void {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+    console.log('HEREEEEEEE');
 
+    localStorage.removeItem('userLogged');
+    this.router.navigate(['login']);
   }
 
 }

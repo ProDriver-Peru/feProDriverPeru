@@ -64,11 +64,15 @@ export class RegisterComponent {
     this.form3 = new FormGroup({
       ruc: new FormControl('', Validators.required),
       companyname: new FormControl('', Validators.required),
-      sector: new FormControl('', Validators.required),
     });
     this.form4 = new FormGroup({
       licensetype: new FormControl('', Validators.required),
       licensenumber: new FormControl('', Validators.required),
+      sector: new FormControl('', Validators.required),
+      companyname: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z ]*$'),
+      ]),
     });
   }
 

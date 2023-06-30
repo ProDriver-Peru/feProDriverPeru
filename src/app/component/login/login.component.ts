@@ -26,19 +26,16 @@ export class LoginComponent implements OnInit {
         this.form.controls['password'].value
       )
       .subscribe((data) => {
-        localStorage.setItem('logged', JSON.stringify(data));
+        localStorage.setItem('userLogged', JSON.stringify(data));
         console.log(data);
 
+        if (localStorage.getItem('userLogged') != null) {
+          console.log('login');
+
+          this.router.navigate(['home']);
+        } else {
+          console.log('no login');
+        }
       });
-
-    console.log(localStorage.getItem('logged'));
-
-    if (localStorage.getItem('logged') != null) {
-      console.log('login');
-
-      this.router.navigate(['home']);
-    } else {
-      console.log('no login');
-    }
   }
 }

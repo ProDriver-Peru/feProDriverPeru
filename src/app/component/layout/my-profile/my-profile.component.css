@@ -1,0 +1,30 @@
+.card-image-container {
+  border-radius: 20px;
+  position: absolute;
+  top: 20px;
+  right: 5px;
+}
+
+.card-image {
+  max-height: 50px;
+  border: 3px solid #00695b;
+  margin: 10px 20px;
+}
+
+.card-image:hover {
+max-height: 150px;
+transition: 0.5s;
+}
+
+.company-image {
+  max-height: 300px;
+  border: 3px solid #00695b;
+  margin: 10px 20px;
+}
+
+.company-image-container {
+  border-radius: 20px;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}

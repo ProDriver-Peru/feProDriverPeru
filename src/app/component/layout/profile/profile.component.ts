@@ -16,7 +16,7 @@ import { NotificationService } from 'src/app/service/notification.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  public user: User = JSON.parse(localStorage.getItem('user') || '{}');
+  public user: User = JSON.parse(localStorage.getItem('userLogged') || '{}');
   public driver = new Driver();
   public employer = new Employer();
   public notification = new Notification();
@@ -49,7 +49,6 @@ export class ProfileComponent implements OnInit {
   }
 
   calculateAge(birthday: string) {
-    //brithday format: yyyy-mm-dd
     let birthdayDate = new Date(birthday);
     let ageDifMs = Date.now() - birthdayDate.getTime();
     let ageDate = new Date(ageDifMs);

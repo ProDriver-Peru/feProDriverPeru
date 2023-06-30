@@ -40,7 +40,7 @@ export class NewJobOfferComponent {
     this.propuesta.location = this.form.value.location;
     this.propuesta.area = this.form.value.area;
 
-    this.propuesta.idEmployer = JSON.parse(localStorage.getItem('user') || '{}').id;
+    this.propuesta.idEmployer = JSON.parse(localStorage.getItem('userLogged') || '{}').id;
 
     this.jobOfferService.postOffer(this.propuesta).subscribe((data) => {
       this.mensaje = data.message;

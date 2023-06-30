@@ -12,7 +12,7 @@ import { User } from 'src/model/User';
   styleUrls: ['./offers-employer.component.css']
 })
 export class OffersEmployerComponent implements OnInit{
-  user: User = JSON.parse(localStorage.getItem('user') || '{}');
+  user: User = JSON.parse(localStorage.getItem('userLogged') || '{}');
   lista: JobOffer[] = [];
   displayedColumns: string[] = ['id', 'description', 'licensetyperequired', 'experienceyears', 'appliers', 'vehicle','idEmployer','location','area'];
   dataSource = new MatTableDataSource();

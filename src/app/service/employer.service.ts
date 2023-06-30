@@ -24,10 +24,13 @@ export class EmployerService {
       return this.http.get<Employer>(this.urlEmployer+"/"+id);
     }
     registerEmployer(employer:Employer):Observable<any>{
-      employer.id=0;
       employer.user.plan="sharky";
       employer.user.description="description";
       employer.user.imageProfile="https://i.imgur.com/tdi3NGa.png";
+      employer.imageCompany="https://i.imgur.com/tdi3NGa.png";
+      employer.user.rol="employer";
+
+      console.log(employer);
       return this.http.post<Employer>(this.urlEmployer,employer);
     }
 }
