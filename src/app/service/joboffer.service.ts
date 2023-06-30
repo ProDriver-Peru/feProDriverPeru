@@ -11,20 +11,28 @@ const baseUrl = environment.base;
 })
 export class JobOfferService {
 
-    private urlOffer = `${baseUrl}/jobOffer`;
+    private urlJobOffer = `${baseUrl}/jobOffer`;
 
     constructor(private http:HttpClient) { }
 
+    getListOffers():Observable<any>{
+      return this.http.get<JobOffer[]>(this.urlJobOffer);
+    }
+
     getListOffersByIdEmployer(idEmployer: number):Observable<any>{
-      return this.http.get<JobOffer[]>(`${this.urlOffer}/idEmployer/${idEmployer}`);
+      return this.http.get<JobOffer[]>(`${this.urlJobOffer}/idEmployer/${idEmployer}`);
+    }
+    /* */
+    getjobOfferById(id: number):Observable<any>{
+      return this.http.get<JobOffer>(`${this.urlJobOffer}/${id}`);
     }
 
     postOffer(jobOffer:JobOffer):Observable<any>{
-      return this.http.post<JobOffer>(this.urlOffer, jobOffer);
+      return this.http.post<JobOffer>(this.urlJobOffer, jobOffer);
     }
 
-    deleteOffer(id: Number):Observable<any>{
-      return this.http.delete<JobOffer>(`${this.urlOffer}/${id}`);
+    deleteOffer(id: number):Observable<any>{
+      return this.http.delete<JobOffer>(`${this.urlJobOffer}/${id}`);
     }
 
 }

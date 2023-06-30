@@ -4,31 +4,28 @@
     <div>
       <mat-card>
         <mat-card-header>
-          <mat-card-title>Conductor {{ this.employer.user.id }}</mat-card-title>
+          <mat-card-title>Usuario N° {{ this.employer.user.id }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <br />
           <div>
             <dl class="row">
-              <dt class="col-sm-3">Nombre</dt>
+              <dt class="col-sm-3">Nombres</dt>
               <dd class="col-sm-9">{{ this.employer.user.name }}</dd>
-              <dt class="col-sm-3">Apellido</dt>
+              <dt class="col-sm-3">Apellidos</dt>
               <dd class="col-sm-9">{{ this.employer.user.lastName }}</dd>
+              <dt class="col-sm-3">Edad</dt>
+              <dd class="col-sm-9">
+                {{ calculateAge(this.employer.user.dateOfBirth) }}
+              </dd>
               <dt class="col-sm-3">DNI</dt>
               <dd class="col-sm-9">{{ this.employer.user.dni }}</dd>
               <dt class="col-sm-3">Correo</dt>
               <dd class="col-sm-9">{{ this.employer.user.email }}</dd>
-              <dt class="col-sm-3">Nombre de la compañía:</dt>
+              <dt class="col-sm-3">Nombre de la compañía</dt>
               <dd class="col-sm-9">{{ this.employer.companyName }}</dd>
-              <dt class="col-sm-3">Edad</dt>
-              <dd class="col-sm-9">
-                {{ calculateAge(this.driver.user.dateOfBirth) }}
-              </dd>
-              <dt class="col-sm-3">Tipo de licencia</dt>
-              <dd class="col-sm-9">{{ this.driver.licensetype }}</dd>
               <dt class="col-sm-3">Descripción</dt>
-              <dd class="col-sm-9">{{ this.driver.user.description }}</dd>
-
+              <dd class="col-sm-9">{{ this.employer.companyDescription }}</dd>
             </dl>
           </div>
           <div class="company-image-container">
@@ -66,26 +63,26 @@
     <div>
       <mat-card>
         <mat-card-header>
-          <mat-card-title>Conductor {{ this.driver.user.id }}</mat-card-title>
+          <mat-card-title>Usuario N° {{ this.driver.user.id }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <br />
-          <div>
+          <div style="width: 700px;">
             <dl class="row">
               <dt class="col-sm-3">Nombre</dt>
               <dd class="col-sm-9">{{ this.driver.user.name }}</dd>
               <dt class="col-sm-3">Apellido</dt>
               <dd class="col-sm-9">{{ this.driver.user.lastName }}</dd>
+              <dt class="col-sm-3">Edad</dt>
+              <dd class="col-sm-9">
+                {{ calculateAge(this.driver.user.dateOfBirth) }}
+              </dd>
               <dt class="col-sm-3">DNI</dt>
               <dd class="col-sm-9">{{ this.driver.user.dni }}</dd>
               <dt class="col-sm-3">Correo</dt>
               <dd class="col-sm-9">{{ this.driver.user.email }}</dd>
               <dt class="col-sm-3">Sector</dt>
               <dd class="col-sm-9">{{ this.driver.sector }}</dd>
-              <dt class="col-sm-3">Edad</dt>
-              <dd class="col-sm-9">
-                {{ calculateAge(this.driver.user.dateOfBirth) }}
-              </dd>
               <dt class="col-sm-3">Tipo de licencia</dt>
               <dd class="col-sm-9">{{ this.driver.licensetype }}</dd>
               <dt class="col-sm-3">Descripción</dt>
@@ -93,9 +90,9 @@
 
             </dl>
           </div>
-          <div class="card-image-container">
+          <div class="company-image-container">
             <img
-              class="card-image"
+              class="company-image"
               mat-card-image
               src="{{this.driver.user.imageProfile}}"
               alt="User's photo"

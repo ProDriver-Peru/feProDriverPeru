@@ -118,12 +118,32 @@
     color="accent"
     [disabled]="!form4.valid"
   >
-    <mat-icon>how_to_reg</mat-icon>
-    Registrase
+    <mat-icon>check_circle</mat-icon>
+    Continuar
   </button>
 </form>
 
-<!--BUTTONS CANCEL AND BACK
+<!--FORM 5-->
+<form [formGroup]="form5" (submit)="form5submit()" [hidden]="step != 5">
+  <mat-form-field class="register-input">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput formControlName="description" rows="5"></textarea>
+  </mat-form-field>
+  <mat-form-field class="register-input">
+    <mat-label>Foto de Perfil</mat-label>
+    <input matInput formControlName="imageProfile" />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    type="submit"
+    color="accent"
+    [disabled]="!form5.valid"
+  >
+    <mat-icon>how_to_reg</mat-icon>
+    Registrase
+  </button>
+
+  <!--BUTTONS CANCEL AND BACK
 
   <button
     mat-button
@@ -148,3 +168,4 @@
   </button>
 
     -->
+</form>

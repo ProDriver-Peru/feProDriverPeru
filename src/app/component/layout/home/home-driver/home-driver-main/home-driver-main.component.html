@@ -1,1 +1,43 @@
-<p>home-driver-main works!</p>
+<h1>Inicio</h1>
+<div class="flex-cards">
+  <div *ngFor="let jobOffer of this.shownOffers"></div>
+  <!---->
+  <mat-card class="mat-card">
+
+  </mat-card>
+  <!---->
+</div>
+<!--
+
+Schema
+{
+  "name": "string",
+  "lastName": "string",
+  "dateOfBirth": "2023-06-30",
+  "description": "string",
+  "imageProfile": "string"
+  "ruc": "string",
+  "imageCompany": "string",
+  "companyName": "string",
+  "companyDescription": "string"
+}
+
+<mat-card-title> Company name{{ this.jobOffer.idEmployer.companyName }}</mat-card-title>
+    <mat-card-subtitle>
+      Empleador: {{ this.jobOffer.idEmployer.user.name }}
+      {{ this.jobOffer.idEmployer.user.lastName }}</mat-card-subtitle
+    >
+    <mat-card-content>
+      <p class="text-justify">
+        {{ this.jobOffer.idEmployer.companyDescription }}
+      </p>
+      <div class="card-image-container">
+        <img
+          class="card-image"
+          mat-card-image
+          src="https://placehold.co/260x320"
+          alt="User's photo"
+        />
+      </div>
+    </mat-card-content>
+-->

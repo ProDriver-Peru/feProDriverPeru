@@ -35,31 +35,24 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        component: HomeComponent,
         canActivate: [],
         children: [
           {
             path: '',
-            component: HomeEmployerComponent,
-            children: [
-              {
-                path: '',
-                component: HomeEmployerMainComponent,
-              },
-              {
-                path: 'new-job-offer',
-                component: NewJobOfferComponent,
-              },
-              {
-                path: 'search-driver',
-                component: SearchComponent,
-              }
-            ],
+            component: HomeComponent,
+          },
+          {
+            path: 'new-job-offer',
+            component: NewJobOfferComponent,
+          },
+          {
+            path: 'search-driver',
+            component: SearchComponent,
           },
           {
             path: 'profile/:id',
             component: ProfileComponent,
-          }
+          },
         ],
       },
       {
@@ -69,7 +62,7 @@ const routes: Routes = [
           {
             path: '',
             component: OffersEmployerComponent,
-          }
+          },
         ],
       },
       {
@@ -85,7 +78,7 @@ const routes: Routes = [
             component: ProfileEditComponent,
           },
         ],
-      }
+      },
     ],
   },
 ];

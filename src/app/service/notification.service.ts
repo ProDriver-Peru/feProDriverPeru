@@ -18,8 +18,12 @@ export class NotificationService {
     getListNotificationByIdEmployer(idEmployer: number):Observable<any>{
       return this.http.get<Notification[]>(`${this.urlNotification}/idEmployer/${idEmployer}`);
     }
-
+    getListNotificationByIdDriver(idDriver: number):Observable<any>{
+      return this.http.get<Notification[]>(`${this.urlNotification}/idDriver/${idDriver}`);
+    }
     postNotification(notification:Notification):Observable<any>{
+      console.log("Notification service");
+      console.log(notification);
       return this.http.post<Notification>(this.urlNotification, notification);
     }
 

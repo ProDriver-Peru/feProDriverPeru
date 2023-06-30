@@ -7,7 +7,7 @@ export class JobOffer {
   experienceyears: number;
   appliers: number;
   vehicle: string;
-  idEmployer: number;
+  idEmployer: Employer = new Employer();
   arrangement: string;
   location: string;
   area: string;

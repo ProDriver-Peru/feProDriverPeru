@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from 'src/model/User';
 
 @Component({
   selector: 'app-offers',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./offers.component.css']
 })
 export class OffersComponent {
-  rol= "employer";
+  public user: User = JSON.parse(localStorage.getItem('userLogged') || '{}');
+
 }

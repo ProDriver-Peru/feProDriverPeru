@@ -18,6 +18,8 @@ export class RegisterComponent {
   form2: FormGroup = new FormGroup({});
   form3: FormGroup = new FormGroup({});
   form4: FormGroup = new FormGroup({});
+  form5: FormGroup = new FormGroup({});
+
   rol: string;
   driver: Driver = new Driver();
   employer: Employer = new Employer();
@@ -63,16 +65,19 @@ export class RegisterComponent {
     });
     this.form3 = new FormGroup({
       ruc: new FormControl('', Validators.required),
-      companyname: new FormControl('', Validators.required),
+      companyname: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z ]*$'),
+      ]),
     });
     this.form4 = new FormGroup({
       licensetype: new FormControl('', Validators.required),
       licensenumber: new FormControl('', Validators.required),
       sector: new FormControl('', Validators.required),
-      companyname: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[a-zA-Z ]*$'),
-      ]),
+    });
+    this.form5 = new FormGroup({
+      description: new FormControl('', Validators.required),
+      imageProfile: new FormControl('', Validators.required),
     });
   }
 
@@ -109,11 +114,18 @@ export class RegisterComponent {
   }
 
   form4submit(): void {
+    this.step++;
+  }
+
+  form5submit(): void {
     this.driver.user = this.returnUserData();
     this.driver.licensetype = this.form4.value.licensetype;
     this.driver.license = this.form4.value.licensenumber;
-    this.driver.sector = this.form3.value.rubro;
+    this.driver.sector = this.form4.value.sector;
     this.driver.user.dateOfBirth = this.form2.value.dateOfBirth;
+    this.driver.user.imageProfile = this.form5.value.imageProfile;
+    this.driver.user.description = this.form5.value.description;//https://i.imgur.com/tdi3NGa.png
+
     this.driverService.registerDriver(this.driver).subscribe((data) => {
       this.router.navigate(['login']);
       console.log(data);

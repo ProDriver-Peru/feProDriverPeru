@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from 'src/model/User';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  public rol="employer";
+  user: User = JSON.parse(localStorage.getItem('userLogged') || '{}');
+
 }

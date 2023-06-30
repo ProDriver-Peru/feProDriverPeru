@@ -56,14 +56,13 @@ export class ProfileComponent implements OnInit {
   }
 
   openDialogNotify() {
-    this.notification.idUserEmployer = new Employer();
-    this.notification.idUserDriver= new Driver();
 
-    this.notification.idUserEmployer.id = this.employer.id;
-    this.notification.idUserDriver.id = this.driver.id;
+    this.notification.idUserDriver = this.driver;
+    this.notification.timestamp = new Date();
 
-    //this.notification.timestamp = new Date();
-
+    this.employerService.getEmployerById(this.user.id).subscribe((data) => {
+      this.notification.idUserEmployer = data;
+    });
     this.dialog
       .open(NotifyComponent)
       .afterClosed()
@@ -77,5 +76,7 @@ export class ProfileComponent implements OnInit {
             });
         }
       });
+
+
   }
 }

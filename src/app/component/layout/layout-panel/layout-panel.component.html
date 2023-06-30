@@ -1,12 +1,12 @@
 <div id="right-panel">
   <div id="perfil">
     <div id="perfil-image-container">
-      <img id="" src="{{user.imageProfile}}" alt="perfil" />
+      <img id="" src="{{user.imageProfile}}" alt="profile photo" />
       <!--img id="perfil-image" src="{{user.imageProfile}}" alt="perfil" /-->
     </div>
     <div id="perfil-information">
-      <h3 id="perfil-name">Name</h3>
-      <h4 id="perfil-lastname">Last Name</h4>
+      <h3 id="perfil-name">{{user.name}}</h3>
+      <h4 id="perfil-lastname">{{user.lastName}}</h4>
       <a id="perfil-editar" routerLink="/my-profile/edit">Editar perfil</a>
     </div>
   </div>

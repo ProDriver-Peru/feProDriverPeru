@@ -1,3 +1,6 @@
-<div class="cont">
-<router-outlet></router-outlet>
+<div class="profile-content" *ngIf="this.user.rol == 'driver'">
+  <app-offers-driver></app-offers-driver>
+</div>
+<div class="profile-content" *ngIf="this.user.rol == 'employer'">
+  <app-offers-employer></app-offers-employer>
 </div>

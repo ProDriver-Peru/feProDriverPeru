@@ -34,10 +34,6 @@ export class DriverService {
   registerDriver(driver: Driver): Observable<any> {
     driver.employed = false;
     driver.user.rol = 'driver';
-    driver.user.plan = 'free';
-    driver.user.description = 'description';
-    driver.user.imageProfile = 'https://i.imgur.com/tdi3NGa.png';
-    driver.sector = 'sector';
 
     console.log(driver);
 

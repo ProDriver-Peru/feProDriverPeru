@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Driver } from 'src/model/Driver';
 import { DriverService } from 'src/app/service/driver.service';
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomeEmployerMainComponent implements OnInit{
   public maxList: any = "24";
+  public listLength: any = "24";
   public selectedValue: any = "1";
   public index: number[];
   public newJobOffer: boolean = false;
@@ -27,6 +28,8 @@ export class HomeEmployerMainComponent implements OnInit{
       else{
         this.listDrivers=data;
         this.index = Array.from(Array(Math.ceil(this.listDrivers.length/2)).keys());
+        //trucate length
+        this.listLength = Math.ceil(this.listDrivers.length/2);
       }
       if(this.listDrivers.length>=2){
         this.shownDrivers = this.listDrivers.slice(0,2);

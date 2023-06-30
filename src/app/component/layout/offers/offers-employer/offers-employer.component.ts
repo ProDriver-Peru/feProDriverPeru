@@ -3,39 +3,59 @@ import { JobOffer } from 'src/model/JobOffer';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { OfferService } from 'src/app/service/offer.service';
+import { JobOfferService } from 'src/app/service/joboffer.service';
+import { EmployerService } from 'src/app/service/employer.service';
 import { User } from 'src/model/User';
 
 @Component({
   selector: 'app-offers-employer',
   templateUrl: './offers-employer.component.html',
-  styleUrls: ['./offers-employer.component.css']
+  styleUrls: ['./offers-employer.component.css'],
 })
-export class OffersEmployerComponent implements OnInit{
+export class OffersEmployerComponent implements OnInit {
   user: User = JSON.parse(localStorage.getItem('userLogged') || '{}');
   lista: JobOffer[] = [];
-  displayedColumns: string[] = ['id', 'description', 'licensetyperequired', 'experienceyears', 'appliers', 'vehicle','idEmployer','location','area'];
+  displayedColumns: string[] = [
+    'id',
+    'description',
+    'licensetyperequired',
+    'experienceyears',
+    'appliers',
+    'vehicle',
+    'idEmployer',
+    'location',
+    'area',
+    'actions',
+  ];
   dataSource = new MatTableDataSource();
 
-  @ViewChild(MatPaginator) paginator : MatPaginator;
-  @ViewChild(MatSort) sort : MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private offerService: OfferService){
-  }
+  constructor(
+    private jobOfferService: JobOfferService,
+    private employerService: EmployerService
+  ) {}
 
   ngOnInit(): void {
-    this.offerService.getListOffersByIdEmployer(this.user.id).subscribe(data=>{
-      this.lista = data;
-    })
+    this.employerService.getEmployerById(this.user.id).subscribe((data) => {
+      this.jobOfferService.getListOffersByIdEmployer(data.id).subscribe((data) => {
+        this.lista = data;
+        this.dataSource = data;
+      });
+    });
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
-  openDialog(id: number) {
+  openDialog(id: number) {}
 
+  delete(id: number) {
+    this.jobOfferService.deleteOffer(id).subscribe((data) => {
+      this.lista = this.lista.filter((item) => item.id !== id);
+    });
   }
-
 }

@@ -4,6 +4,8 @@ import { JobOffer } from 'src/model/JobOffer';
 import { Router } from '@angular/router';
 import { JobOfferService } from 'src/app/service/joboffer.service';
 import { Employer } from 'src/model/Employer';
+import { EmployerService } from 'src/app/service/employer.service';
+import { User } from 'src/model/User';
 
 @Component({
   selector: 'app-new-job-offer',
@@ -11,11 +13,16 @@ import { Employer } from 'src/model/Employer';
   styleUrls: ['./new-job-offer.component.css'],
 })
 export class NewJobOfferComponent {
+  user: User = JSON.parse(localStorage.getItem('userLogged') || '{}');
   form: FormGroup = new FormGroup({});
   propuesta: JobOffer = new JobOffer();
   mensaje: string = '';
 
-  constructor(private router: Router, private jobOfferService: JobOfferService) {}
+  constructor(
+    private router: Router,
+    private jobOfferService: JobOfferService,
+    private employerService: EmployerService
+  ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -39,14 +46,12 @@ export class NewJobOfferComponent {
     this.propuesta.arrangement = this.form.value.arrangement;
     this.propuesta.location = this.form.value.location;
     this.propuesta.area = this.form.value.area;
-
-    this.propuesta.idEmployer = JSON.parse(localStorage.getItem('userLogged') || '{}').id;
-
-    this.jobOfferService.postOffer(this.propuesta).subscribe((data) => {
-      this.mensaje = data.message;
-      if (data.status == 200) {
-        this.router.navigate(['/home/employer']);
-      }
+    this.employerService.getEmployerById(this.user.id).subscribe((data) => {
+      this.propuesta.idEmployer = data;
+      this.jobOfferService.postOffer(this.propuesta).subscribe((data) => {
+        console.log(data);
+        this.router.navigate(['/home']);
+      });
     });
     console.log(this.propuesta);
   }
