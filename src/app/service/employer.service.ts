@@ -20,6 +20,9 @@ export class EmployerService {
     insertEmployer(employer:Employer):Observable<any>{
       return this.http.post<Employer>(this.urlEmployer,employer);
     }
+    getEmployerById(id:number):Observable<any>{
+      return this.http.get<Employer>(this.urlEmployer+"/"+id);
+    }
     registerEmployer(employer:Employer):Observable<any>{
       employer.id=0;
       employer.user.plan="sharky";

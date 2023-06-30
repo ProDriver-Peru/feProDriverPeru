@@ -15,19 +15,11 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  checkLogin (email: string, password: string):boolean{
-    let user: User = new User();
-    user.email= email;
-    user.password = password;
-    user.id = 1;
-    user.name = "Juan";
-    user.lastname = "Perez";
-    user.role = "employer";
-    localStorage.setItem('user', JSON.stringify(user));
-    return true;
-  }
-
   register(user: User){
     return this.http.post<User[]>(this.urlAuth,user);
   }
+
+
+
+
 }

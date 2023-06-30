@@ -19,7 +19,7 @@ export class NotificationService {
       return this.http.get<Notification[]>(`${this.urlNotification}/idEmployer/${idEmployer}`);
     }
 
-    postOffer(notification:Notification):Observable<any>{
+    postNotification(notification:Notification):Observable<any>{
       return this.http.post<Notification>(this.urlNotification, notification);
     }
 

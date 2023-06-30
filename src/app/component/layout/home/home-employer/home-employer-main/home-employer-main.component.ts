@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Driver } from 'src/model/Driver';
 import { DriverService } from 'src/app/service/driver.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-employer-main',
@@ -15,7 +16,7 @@ export class HomeEmployerMainComponent implements OnInit{
   public listDrivers: Driver[] = [];
   public shownDrivers: Driver[] = [];
 
-  constructor(private driverService: DriverService) {
+  constructor(private driverService: DriverService, private router: Router) {
   }
   ngOnInit(): void {
     this.driverService.getListDrivers().subscribe((data: Driver[]) => {
@@ -30,7 +31,9 @@ export class HomeEmployerMainComponent implements OnInit{
       if(this.listDrivers.length>=2){
         this.shownDrivers = this.listDrivers.slice(0,2);
       }
+      this.refresh(1);
     });
+
   }
 
   openNewJobOfferDialog() {
@@ -43,6 +46,9 @@ export class HomeEmployerMainComponent implements OnInit{
   refresh(page: number){
     this.shownDrivers = this.listDrivers.slice(page*2-2,page*2);
     this.selectedValue = page;
+  }
+  goToProfile(id: number){
+    this.router.navigate(['/home/profile/',id]);
   }
 
 }

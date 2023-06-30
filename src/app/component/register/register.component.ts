@@ -18,7 +18,7 @@ export class RegisterComponent {
   form2: FormGroup = new FormGroup({});
   form3: FormGroup = new FormGroup({});
   form4: FormGroup = new FormGroup({});
-  role: string;
+  rol: string;
   driver: Driver = new Driver();
   employer: Employer = new Employer();
   mensaje: string = '';
@@ -39,7 +39,7 @@ export class RegisterComponent {
         Validators.pattern('^[a-zA-Z ]*$'),
         Validators.maxLength(50),
       ]),
-      lastname: new FormControl('', [
+      lastName: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]*$'),
         Validators.maxLength(50),
@@ -58,7 +58,8 @@ export class RegisterComponent {
         Validators.required,
         Validators.minLength(8),
       ]),
-      role: new FormControl('', Validators.required),
+      rol: new FormControl('', Validators.required),
+      dateOfBirth: new FormControl('', Validators.required),
     });
     this.form3 = new FormGroup({
       ruc: new FormControl('', Validators.required),
@@ -83,9 +84,9 @@ export class RegisterComponent {
     this.step++;
   }
   form2submit(): void {
-    this.role = this.form2.value.role;
+    this.rol = this.form2.value.rol;
 
-    if (this.role == 'driver') {
+    if (this.rol == 'driver') {
       this.step = 4;
     } else {
       this.step = 3;
@@ -95,30 +96,34 @@ export class RegisterComponent {
   form3submit(): void {
     this.employer.user = this.returnUserData();
     this.employer.ruc = this.form3.value.ruc;
-    this.employer.companyName = this.form3.value.companyname;
+    this.employer.companyName = this.form4.value.companyname;
+    this.employer.user.dateOfBirth = this.form2.value.dateOfBirth;
     this.employerService.registerEmployer(this.employer).subscribe((data) => {
       this.router.navigate(['login']);
+      console.log(data);
     });
   }
 
   form4submit(): void {
     this.driver.user = this.returnUserData();
-    this.driver.licenseType = this.form4.value.licensetype;
+    this.driver.licensetype = this.form4.value.licensetype;
     this.driver.license = this.form4.value.licensenumber;
     this.driver.sector = this.form3.value.rubro;
+    this.driver.user.dateOfBirth = this.form2.value.dateOfBirth;
     this.driverService.registerDriver(this.driver).subscribe((data) => {
       this.router.navigate(['login']);
+      console.log(data);
     });
   }
 
   returnUserData(): User {
     let user: User = new User();
     user.name = this.form1.value.firstname;
-    user.lastname = this.form1.value.lastname;
+    user.lastName = this.form1.value.lastName;
     user.dni = this.form1.value.dni;
     user.email = this.form2.value.email;
     user.password = this.form2.value.password;
-    user.role = this.form2.value.role;
+    user.rol = this.form2.value.rol;
     return user;
   }
 }

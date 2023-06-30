@@ -14,7 +14,7 @@ import { User } from 'src/model/User';
 export class OffersEmployerComponent implements OnInit{
   user: User = JSON.parse(localStorage.getItem('user') || '{}');
   lista: JobOffer[] = [];
-  displayedColumns: string[] = ['id', 'description', 'licenseTypeRequired', 'experienceYearsRequired', 'appliers', 'vehicle'];
+  displayedColumns: string[] = ['id', 'description', 'licensetyperequired', 'experienceyears', 'appliers', 'vehicle','idEmployer','location','area'];
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator : MatPaginator;
@@ -24,8 +24,8 @@ export class OffersEmployerComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.offerService.getListOffersByIdEmployer(user.id).subscribe(data=>{
-      this.dataSource.data=data;
+    this.offerService.getListOffersByIdEmployer(this.user.id).subscribe(data=>{
+      this.lista = data;
     })
   }
 
@@ -35,6 +35,7 @@ export class OffersEmployerComponent implements OnInit{
   }
 
   openDialog(id: number) {
+
   }
 
 }

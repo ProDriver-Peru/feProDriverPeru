@@ -4,7 +4,7 @@ export class Driver {
   id: number;
   user: User = new User();
   employed: boolean;
-  licenseType: string;
+  licensetype: string;
   license: string;
   sector: string;
   constructor() {}

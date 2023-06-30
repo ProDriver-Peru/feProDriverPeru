@@ -36,6 +36,7 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+        canActivate: [],
         children: [
           {
             path: '',
@@ -55,6 +56,10 @@ const routes: Routes = [
               }
             ],
           },
+          {
+            path: 'profile/:id',
+            component: ProfileComponent,
+          }
         ],
       },
       {

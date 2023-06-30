@@ -14,10 +14,10 @@
             <mat-card-header>
               <mat-card-title
                 >{{ driver.user.name }}
-                {{ driver.user.lastname }}</mat-card-title
+                {{ driver.user.lastName }}</mat-card-title
               >
               <mat-card-subtitle>
-                Licencia: {{ driver.licenseType }} | FN:
+                Licencia: {{ driver.licensetype }} | FN:
                 {{ driver.user.dateOfBirth }}
               </mat-card-subtitle>
             </mat-card-header>
@@ -47,6 +47,7 @@
             mat-flat-button
             color="accent"
             style="margin: 0px 20px 20px 0px"
+            (click)="goToProfile(driver.user.id)"
           >
             Ver perfil
             <mat-icon>visibility</mat-icon>

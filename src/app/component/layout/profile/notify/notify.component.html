@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Enviar notificación</h1>
+<div mat-dialog-content>
+  <p>¡Rellena y envía una notificación al usuario conductor!</p>
+  <mat-form-field class="field-content">
+    <mat-label class="field-content">Contenido</mat-label>
+    <textarea input matInput draggable="true" [(ngModel)]="this.content"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="this.content" cdkFocusInitial>Ok</button>
+</div>

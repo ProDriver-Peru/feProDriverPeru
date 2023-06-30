@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/service/auth.service';
+import { DriverService } from 'src/app/service/driver.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
   form: FormGroup = new FormGroup({});
-  constructor(private router: Router, private AuthService: AuthService) {
-  }
+  constructor(private router: Router, private driverService: DriverService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -21,14 +20,25 @@ export class LoginComponent implements OnInit{
   }
 
   login() {
+    this.driverService
+      .login(
+        this.form.controls['email'].value,
+        this.form.controls['password'].value
+      )
+      .subscribe((data) => {
+        localStorage.setItem('logged', JSON.stringify(data));
+        console.log(data);
 
-    if(this.AuthService.checkLogin(this.form.value.email, this.form.value.password))
-    {
+      });
+
+    console.log(localStorage.getItem('logged'));
+
+    if (localStorage.getItem('logged') != null) {
+      console.log('login');
+
       this.router.navigate(['home']);
-    }
-    else{
-
+    } else {
+      console.log('no login');
     }
   }
-
 }

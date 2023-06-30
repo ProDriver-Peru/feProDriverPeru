@@ -17,7 +17,6 @@ import { HomeEmployerComponent } from './component/layout/home/home-employer/hom
 import { SearchComponent } from './component/layout/search/search.component';
 import { SearchResultsComponent } from './component/layout/search/search-results/search-results.component';
 import { ProfileComponent } from './component/layout/profile/profile.component';
-import { ProfileDriverComponent } from './component/layout/profile/profile-driver/profile-driver.component';
 import { ProfileEditComponent } from './component/layout/my-profile/profile-edit/profile-edit.component';
 import { NotificationsComponent } from './component/layout/notifications/notifications.component';
 import { OffersComponent } from './component/layout/offers/offers.component';
@@ -31,6 +30,7 @@ import { HomeDriverMainComponent } from './component/layout/home/home-driver/hom
 import { NewJobOfferComponent } from './component/layout/home/home-employer/new-job-offer/new-job-offer.component';
 import { MyProfileComponent } from './component/layout/my-profile/my-profile.component';
 import { RegisterComponent } from './component/register/register.component';
+import { NotifyComponent } from './component/layout/profile/notify/notify.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,6 @@ import { RegisterComponent } from './component/register/register.component';
     SearchComponent,
     SearchResultsComponent,
     ProfileComponent,
-    ProfileDriverComponent,
     ProfileEditComponent,
     NotificationsComponent,
     OffersComponent,
@@ -59,6 +58,7 @@ import { RegisterComponent } from './component/register/register.component';
     NewJobOfferComponent,
     MyProfileComponent,
     RegisterComponent,
+    NotifyComponent,
   ],
   imports: [
     AngularMaterialModule,
