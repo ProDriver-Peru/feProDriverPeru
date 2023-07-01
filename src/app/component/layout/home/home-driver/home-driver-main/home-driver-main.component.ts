@@ -15,7 +15,7 @@ import { DriverService } from 'src/app/service/driver.service';
 })
 export class HomeDriverMainComponent implements OnInit {
   user: User = JSON.parse(localStorage.getItem('userLogged') || '{}');
-  public applier: Applierperjoboffer;
+  public applier: Applierperjoboffer = new Applierperjoboffer();
 
   shownOffers: JobOffer[] = [];
   constructor(
@@ -31,9 +31,9 @@ export class HomeDriverMainComponent implements OnInit {
   }
   postular(jobOffer: JobOffer) {
     this.driverService.getDriverById(this.user.id).subscribe((data) => {
-      this.applier.idDriver = data;
-      this.applier.statuS = 'Pendiente';
-      this.applier.idJobOffer = jobOffer;
+      this.applier.idDriver = data.user;
+      this.applier.status = 'Pendiente';
+      this.applier.idJoboffer = jobOffer;
       this.applier.timestamp = new Date();
       this.aplierperjobofferService
         .insertApplierPerJobOffer(this.applier)

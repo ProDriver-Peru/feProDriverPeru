@@ -29,3 +29,14 @@
   top: 15px;
   right: 0px;
 }
+@media screen and (max-width: 700px) {
+  .cont {
+    padding: 20px 0px 20px 0px;
+  }
+  .company-image-container{
+    position: static;
+    max-width: 95%;
+  }
+
+
+}

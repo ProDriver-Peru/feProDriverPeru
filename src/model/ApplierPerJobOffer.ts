@@ -3,9 +3,9 @@ import { User } from './User';
 
 export class Applierperjoboffer {
   id: number;
-  idJobOffer: JobOffer;
+  idJoboffer: JobOffer = new JobOffer();
   idDriver: User = new User();
-  statuS: string;
+  status: string;
   timestamp: Date;
   constructor() {}
 }

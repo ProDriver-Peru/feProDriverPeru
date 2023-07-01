@@ -20,7 +20,7 @@ export class JobOfferService {
     return this.http.get<JobOffer[]>(this.urlJobOffer + '/idEmployer/' + id);
   }
   getListOffersByIdDriver(id: number): Observable<any> {
-    return this.http.get<JobOffer[]>(this.urlJobOffer + '/idDriver/' + id);
+    return this.http.get<JobOffer[]>(this.urlJobOffer + '/drivers/' + id);
   }
 
   insertJobOffer(jobOffer: JobOffer): Observable<any> {
