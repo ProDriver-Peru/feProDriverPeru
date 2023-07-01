@@ -3,7 +3,7 @@
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field class="description">
         <mat-label>Descripción</mat-label>
-        <input matInput formControlName="description" />
+        <textarea matInput formControlName="description" rows="4"></textarea>
       </mat-form-field>
       <mat-form-field class="licensetyperequired">
         <mat-label>Tipo de Licencia</mat-label>

@@ -1,4 +1,10 @@
 
 .offers-table{
     margin: 40px 40px;
+    position: absolute;
+}
+.btn-new-offer{
+  position: absolute;
+  top: 40px;
+  right: 60px;
 }

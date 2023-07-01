@@ -1,1 +1,36 @@
-<p>offers-made works!</p>
+<div class="proposal-form">
+  <div class="proposal-form-form">
+    <form [formGroup]="form1" (submit)="aceptar()">
+      <mat-form-field class="description">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="description" rows="4"></textarea>
+      </mat-form-field>
+      <mat-form-field class="licensetyperequired">
+        <mat-label>Tipo de Licencia</mat-label>
+        <input matInput formControlName="licensetyperequired" />
+      </mat-form-field>
+      <mat-form-field class="experienceyears">
+        <mat-label>Años de experiencia</mat-label>
+        <input matInput formControlName="experienceyears" />
+      </mat-form-field>
+      <mat-form-field class="vehicle">
+        <mat-label>Vehículo</mat-label>
+        <input matInput formControlName="vehicle" />
+      </mat-form-field>
+      <mat-form-field class="arrangement">
+        <mat-label>Arrangement</mat-label>
+        <input matInput formControlName="arrangement" />
+      </mat-form-field>
+      <mat-form-field class="location">
+        <mat-label>Locación</mat-label>
+        <input matInput formControlName="location" />
+      </mat-form-field>
+      <mat-form-field class="area">
+        <mat-label>Area</mat-label>
+        <input matInput formControlName="area" />
+      </mat-form-field>
+      <button mat-flat-button color="accent" class="btn" type="submit">Publicar</button>
+      <p>{{ mensaje }}</p>
+    </form>
+  </div>
+</div>

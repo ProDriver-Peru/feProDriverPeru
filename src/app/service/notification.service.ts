@@ -7,24 +7,27 @@ import { Observable } from 'rxjs';
 const baseUrl = environment.base;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NotificationService {
+  private urlNotification = `${baseUrl}/notification`;
 
-    private urlNotification = `${baseUrl}/notification`;
+  constructor(private http: HttpClient) {}
 
-    constructor(private http:HttpClient) { }
+  getListNotificationByIdEmployer(idEmployer: number): Observable<any> {
+    return this.http.get<Notification[]>(
+      `${this.urlNotification}/idEmployer/${idEmployer}`
+    );
+  }
 
-    getListNotificationByIdEmployer(idEmployer: number):Observable<any>{
-      return this.http.get<Notification[]>(`${this.urlNotification}/idEmployer/${idEmployer}`);
-    }
-    getListNotificationByIdDriver(idDriver: number):Observable<any>{
-      return this.http.get<Notification[]>(`${this.urlNotification}/idDriver/${idDriver}`);
-    }
-    postNotification(notification:Notification):Observable<any>{
-      console.log("Notification service");
-      console.log(notification);
-      return this.http.post<Notification>(this.urlNotification, notification);
-    }
-
+  getListNotificationByIdDriver(idDriver: number): Observable<any> {
+    return this.http.get<Notification[]>(
+      `${this.urlNotification}/idDriver/${idDriver}`
+    );
+  }
+  postNotification(notification: Notification): Observable<any> {
+    console.log('Notification service');
+    console.log(notification);
+    return this.http.post<Notification>(this.urlNotification, notification);
+  }
 }

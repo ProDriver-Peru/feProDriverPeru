@@ -1,0 +1,96 @@
+<div>
+  <h1>Mis Propuestas</h1>
+
+  <div class="mat-elevation-z2 tb-css-1 offers-table">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Código Propuesta
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Descripción
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.description }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="licensetyperequired">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Licencia
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.licensetyperequired }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="experienceyears">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Años de experiencia
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.experienceyears }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="appliers">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Appliers
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.appliers }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="vehicle">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Vehículo
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.vehicle }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="idEmployer">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Código Empleador
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.idEmployer }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="location">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Locación
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.location }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="area">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Área
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.area }} </mat-cell>
+      </ng-container>
+
+      <!-- ACTIONS -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Acciones
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="view(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="quit(element.id)">
+            <mat-icon>quit</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+</div>

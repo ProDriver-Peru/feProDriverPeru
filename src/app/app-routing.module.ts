@@ -59,6 +59,7 @@ const routes: Routes = [
       {
         path: 'offers',
         component: OffersComponent,
+        canActivate: [AuthService],
         children: [
           {
             path: '',
@@ -69,9 +70,11 @@ const routes: Routes = [
       {
         path: 'notifications',
         component: NotificationsComponent,
+        canActivate: [AuthService],
       },
       {
         path: 'my-profile',
+        canActivate: [AuthService],
         component: MyProfileComponent,
         children: [
           {
@@ -81,11 +84,6 @@ const routes: Routes = [
         ],
       },
     ],
-  },
-  {
-    path: '**',
-    redirectTo: 'home',
-    pathMatch: 'full',
   }
 ];
 

@@ -42,8 +42,13 @@ export class MyProfileComponent implements OnInit {
   }
 
   openDialogEdit() {
-    this.dialog.open(ProfileEditComponent).afterClosed().subscribe((result) => {
-      this.ngOnInit();
-    });
+    this.dialog
+      .open(ProfileEditComponent, {
+        autoFocus: false,
+      })
+      .afterClosed()
+      .subscribe((result) => {
+        this.ngOnInit();
+      });
   }
 }

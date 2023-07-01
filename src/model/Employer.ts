@@ -1,11 +1,11 @@
 import { User } from './User';
 
 export class Employer {
-  id: number;
+  id: number;//no
   user: User = new User();
-  ruc: string;
-  imageCompany: string = "https://i.imgur.com/tdi3NGa.png";
-  companyName: string;
-  companyDescription: string;
+  ruc: string;//si
+  imageCompany: string = "https://i.imgur.com/tdi3NGa.png";//si
+  companyName: string;//si
+  companyDescription: string;//si
   constructor() {}
 }
