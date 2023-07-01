@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { JobOffer } from 'src/model/JobOffer';
-import { JobOfferService } from 'src/app/service/joboffer.service';
+import { JobOfferService } from 'src/app/service/job-offer.service';
 import { User } from 'src/model/User';
 
 @Component({

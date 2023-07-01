@@ -16,9 +16,7 @@ export class EmployerService {
   getListEmployers(): Observable<any> {
     return this.http.get<Employer[]>(this.urlEmployer);
   }
-  insertEmployer(employer: Employer): Observable<any> {
-    return this.http.post<Employer>(this.urlEmployer, employer);
-  }
+
   getEmployerById(id: number): Observable<any> {
     return this.http.get<Employer>(this.urlEmployer + '/' + id);
   }
@@ -29,7 +27,10 @@ export class EmployerService {
   registerEmployer(employer: Employer): Observable<any> {
     employer.user.rol = 'employer';
     employer.user.description = 'active';
-
+    if (employer.user.imageProfile == null || employer.user.imageProfile == '')
+    employer.user.imageProfile = 'https://i.imgur.com/tdi3NGa.png';
+    if (employer.imageCompany == null || employer.imageCompany == '')
+    employer.imageCompany = 'https://i.imgur.com/tdi3NGa.png'
     console.log(employer);
     return this.http.post<Employer>(this.urlEmployer, employer);
   }

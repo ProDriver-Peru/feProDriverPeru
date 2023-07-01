@@ -2,7 +2,7 @@
 <div class="home-flex">
   <div class="home-actions">
     <div><span></span></div>
-    <button mat-raised-button color="primary">
+    <button mat-raised-button color="primary" routerLink="/home/search-driver">
       Buscar <mat-icon>search</mat-icon>
     </button>
   </div>
@@ -17,8 +17,8 @@
                 {{ driver.user.lastName }}</mat-card-title
               >
               <mat-card-subtitle>
-                Licencia: {{ driver.licensetype }} | FN:
-                {{ driver.user.dateOfBirth }}
+                Licencia: {{ driver.licensetype }} | Edad:
+                {{calculateAge(driver.user.dateOfBirth)}}
               </mat-card-subtitle>
             </mat-card-header>
             <br />
@@ -34,7 +34,7 @@
             <img
               class="card-image"
               mat-card-image
-              src="https://placehold.co/260x320"
+              src="{{driver.user.imageProfile}}"
               alt="User's photo"
             />
           </div>

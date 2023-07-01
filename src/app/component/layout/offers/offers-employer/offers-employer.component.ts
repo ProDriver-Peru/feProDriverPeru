@@ -3,7 +3,7 @@ import { JobOffer } from 'src/model/JobOffer';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { JobOfferService } from 'src/app/service/joboffer.service';
+import { JobOfferService } from 'src/app/service/job-offer.service';
 import { EmployerService } from 'src/app/service/employer.service';
 import { User } from 'src/model/User';
 import { OffersMadeComponent } from './offers-made/offers-made.component';
@@ -64,7 +64,7 @@ export class OffersEmployerComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.jobOfferService.deleteOffer(id).subscribe((data) => {
+    this.jobOfferService.deleteJobOffer(id).subscribe((data) => {
       this.lista = this.lista.filter((item) => item.id !== id);
     });
   }

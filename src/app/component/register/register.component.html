@@ -97,9 +97,8 @@
 </form>
 
 <!--FORM 3-->
-<!--EMPLOYER-->
+
 <form [formGroup]="form3" (submit)="form3submit()" [hidden]="step != 3">
-  <!--EMPLOYER-->
   <mat-form-field class="register-input">
     <mat-label>Descripción</mat-label>
     <textarea matInput formControlName="description" rows="5"></textarea>
@@ -164,13 +163,18 @@
 
 <!--FORM 5-->
 <form [formGroup]="form5" (submit)="form5submit()" [hidden]="step != 5">
-  <mat-form-field class="register-input">
-    <mat-label>Tipo de Licencia</mat-label>
-    <input matInput formControlName="licensetype" />
-    <mat-error *ngIf="form5.get('licensetype')?.invalid && form5.get('licensetype')?.touched">
-      Ingrese un tipo de licencia válida
-    </mat-error>
+
+  <mat-form-field>
+    <mat-label>Tipo de licencia</mat-label>
+    <mat-select required formControlName="licensetype">
+      <mat-option value="AI">AI</mat-option>
+      <mat-option value="AIIa">AIIa</mat-option>
+      <mat-option value="AIIIa">AIIIa</mat-option>
+      <mat-option value="AIIb">AIIb</mat-option>
+      <mat-option value="AIIIb">AIIIb</mat-option>
+    </mat-select>
   </mat-form-field>
+
   <mat-form-field class="register-input">
     <mat-label>N° de Licencia</mat-label>
     <input matInput formControlName="licensenumber" />
@@ -185,6 +189,13 @@
       Ingrese un sector válido
     </mat-error>
   </mat-form-field>
+
+
+  <mat-form-field class="register-input">
+    <mat-label>Años de experiencia</mat-label>
+    <input matInput formControlName="yearsExperience" />
+  </mat-form-field>
+
   <button
     mat-raised-button
     type="submit"
@@ -198,7 +209,7 @@
 
   <!--FORM 6-->
   <form [formGroup]="form6" (submit)="form6submit()" [hidden]="step != 6">
-    <a>HOLAAAAAAAAAAAAAAAAA</a>
+    <p>Finalizar</p>
     <button
       mat-raised-button
       type="submit"
@@ -208,30 +219,4 @@
       <mat-icon>how_to_reg</mat-icon>
       Registrase
     </button>
-
-  <!--BUTTONS CANCEL AND BACK
-
-  <button
-    mat-button
-    class="mat-elevation-z2"
-    type="button"
-    color="warn"
-    routerLink="/login"
-    *ngIf="step === 0"
-  >
-    <mat-icon>cancel</mat-icon> Cancelar
-  </button>
-
-  <button
-    mat-button
-    class="mat-elevation-z2"
-    color="warn"
-    type="button"
-    (click)="back()"
-    *ngIf="step !== 0"
-  >
-    <mat-icon>navigate_before</mat-icon> Retroceder
-  </button>
-
-    -->
 </form>

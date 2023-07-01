@@ -42,8 +42,11 @@ export class HomeEmployerMainComponent implements OnInit{
   openNewJobOfferDialog() {
     this.newJobOffer = true;
   }
-  calcAge(dateOfBirth: string): any {
-
+  calculateAge(birthday: string) {
+    let birthdayDate = new Date(birthday);
+    let ageDifMs = Date.now() - birthdayDate.getTime();
+    let ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
   }
 
   refresh(page: number){

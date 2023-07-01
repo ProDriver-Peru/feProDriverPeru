@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { JobOffer } from 'src/model/JobOffer';
-import { Form, FormControl, FormGroup } from '@angular/forms';
-import { JobOfferService } from 'src/app/service/joboffer.service';
+import { FormControl, FormGroup } from '@angular/forms';
+import { JobOfferService } from 'src/app/service/job-offer.service';
 @Component({
   selector: 'app-offers-made',
   templateUrl: './offers-made.component.html',
@@ -40,7 +40,7 @@ export class OffersMadeComponent implements OnInit {
     this.jobOffer.location = this.form1.value.location;
     this.jobOffer.area = this.form1.value.area;
     console.log(this.jobOffer);
-    this.jobOfferService.updateJobOffer(this.jobOffer).subscribe((data) => {
+    this.jobOfferService.updateJobOffer(this.jobOffer).subscribe(() => {
       this.mensaje = 'Oferta actualizada correctamente';
       this.dialogRef.close(this.jobOffer);
     });

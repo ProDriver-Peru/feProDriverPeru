@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { JobOffer } from 'src/model/JobOffer';
 import { Router } from '@angular/router';
-import { JobOfferService } from 'src/app/service/joboffer.service';
+import { JobOfferService } from 'src/app/service/job-offer.service';
 import { Employer } from 'src/model/Employer';
 import { EmployerService } from 'src/app/service/employer.service';
 import { User } from 'src/model/User';
@@ -50,7 +50,7 @@ export class NewJobOfferComponent {
     this.employerService.getEmployerById(this.user.id).subscribe((data) => {
       this.propuesta.idEmployer = data;
     });
-    this.jobOfferService.postOffer(this.propuesta).subscribe((data) => {
+    this.jobOfferService.insertJobOffer(this.propuesta).subscribe((data) => {
       console.log(data);
 
       this.router.navigate(['/home']);

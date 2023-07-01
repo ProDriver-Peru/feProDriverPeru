@@ -12,14 +12,13 @@ const baseUrl = environment.base;
 })
 export class DriverService {
   private urlDriver = `${baseUrl}/driver`;
+
   constructor(private http: HttpClient) {}
 
   getListDrivers(): Observable<any> {
     return this.http.get<Driver[]>(this.urlDriver);
   }
-  insertDriver(driver: Driver): Observable<any> {
-    return this.http.post<Driver>(this.urlDriver, driver);
-  }
+
   getDriverById(id: number): Observable<any> {
     return this.http.get<Driver>(this.urlDriver + '/' + id);
   }
@@ -31,14 +30,21 @@ export class DriverService {
     return this.http.post<User>(environment.base + '/sign-in', user);
   }
   updateDriver(driver: Driver): Observable<any> {
+    if (driver.user.imageProfile == null || driver.user.imageProfile == '')
+      driver.user.imageProfile = 'https://i.imgur.com/tdi3NGa.png';
     return this.http.put<Driver>(this.urlDriver + '/' + driver.id, driver);
+  }
+  getListDriversByLicenseType(licenseType: string): Observable<any> {
+    return this.http.get<Driver[]>(
+      this.urlDriver + '/licenseType/' + licenseType
+    );
   }
 
   registerDriver(driver: Driver): Observable<any> {
     driver.employed = false;
     driver.user.rol = 'driver';
-
-    console.log(driver);
+    if (driver.user.imageProfile == null || driver.user.imageProfile == '')
+      driver.user.imageProfile = 'https://i.imgur.com/tdi3NGa.png';
 
     return this.http.post<Driver>(this.urlDriver, driver);
   }

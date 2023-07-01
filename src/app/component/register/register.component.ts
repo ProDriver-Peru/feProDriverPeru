@@ -82,6 +82,7 @@ export class RegisterComponent {
       licensetype: new FormControl('', Validators.required),
       licensenumber: new FormControl('', Validators.required),
       sector: new FormControl('', Validators.required),
+      yearsExperience: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
     });
     this.form6 = new FormGroup({});
   }
@@ -132,6 +133,7 @@ export class RegisterComponent {
     this.driver.license = this.form5.value.licensenumber;
     this.driver.sector = this.form5.value.sector;
     this.step = 6;
+    this.driver.yearsExperience = this.form5.value.yearsExperience;
   }
   form6submit(): void {
 
