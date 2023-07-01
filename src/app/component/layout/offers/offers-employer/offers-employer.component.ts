@@ -38,15 +38,17 @@ export class OffersEmployerComponent implements OnInit {
   constructor(
     private jobOfferService: JobOfferService,
     private employerService: EmployerService,
-    private dialog: MatDialog,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.employerService.getEmployerById(this.user.id).subscribe((data) => {
-      this.jobOfferService.getListOffersByIdEmployer(data.id).subscribe((data) => {
-        this.lista = data;
-        this.dataSource = data;
-      });
+      this.jobOfferService
+        .getListOffersByIdEmployer(data.id)
+        .subscribe((data) => {
+          this.lista = data;
+          this.dataSource = data;
+        });
     });
   }
 
@@ -56,16 +58,27 @@ export class OffersEmployerComponent implements OnInit {
   }
 
   editOffer(jobOffer: JobOffer) {
-    this.dialog.open(OffersMadeComponent, {
-      data: {
-        jobOffer: jobOffer,
-      }
-    });
+    this.dialog
+      .open(OffersMadeComponent, {
+        data: {
+          jobOffer,
+        },
+      })
+      .afterClosed()
+      .subscribe(() => {
+        this.jobOfferService.getListJobOffers().subscribe((data) => {
+          this.lista = data;
+          this.dataSource = data;
+        });
+      });
   }
 
   delete(id: number) {
     this.jobOfferService.deleteJobOffer(id).subscribe((data) => {
-      this.lista = this.lista.filter((item) => item.id !== id);
+      this.jobOfferService.getListJobOffers().subscribe((data) => {
+        this.lista = data;
+        this.dataSource = data;
+      });
     });
   }
 }

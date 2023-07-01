@@ -63,3 +63,9 @@
   margin-top: 15px;
   color: #fff;
 }
+
+@media screen and (max-width: 600px) {
+  #right-panel {
+    display: none;
+  }
+}

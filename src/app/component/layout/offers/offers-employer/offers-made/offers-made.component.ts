@@ -32,6 +32,8 @@ export class OffersMadeComponent implements OnInit {
     });
   }
   aceptar() {
+    this.jobOffer.id = this.data.jobOffer.id;
+    this.jobOffer.idEmployer = this.data.jobOffer.idEmployer;
     this.jobOffer.description = this.form1.value.description;
     this.jobOffer.licensetyperequired = this.form1.value.licensetyperequired;
     this.jobOffer.experienceyears = this.form1.value.experienceyears;
@@ -39,9 +41,11 @@ export class OffersMadeComponent implements OnInit {
     this.jobOffer.arrangement = this.form1.value.arrangement;
     this.jobOffer.location = this.form1.value.location;
     this.jobOffer.area = this.form1.value.area;
+    this.jobOffer.appliers = 0;
     console.log(this.jobOffer);
+
+
     this.jobOfferService.updateJobOffer(this.jobOffer).subscribe(() => {
-      this.mensaje = 'Oferta actualizada correctamente';
       this.dialogRef.close(this.jobOffer);
     });
   }

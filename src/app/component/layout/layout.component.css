@@ -5,3 +5,8 @@
   width: calc(100vw - 364px);
   height: calc(100vh - 64px);
 }
+@media screen and (max-width: 900px) {
+  .layout-body {
+    width: calc(100vw - 84px);
+  }
+}
