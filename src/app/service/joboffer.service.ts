@@ -22,6 +22,10 @@ export class JobOfferService {
     getListOffersByIdEmployer(idEmployer: number):Observable<any>{
       return this.http.get<JobOffer[]>(`${this.urlJobOffer}/idEmployer/${idEmployer}`);
     }
+    getListOffersByIdDriver(idDriver: number):Observable<any>{
+      return this.http.get<JobOffer[]>(`${this.urlJobOffer}/idDriver/${idDriver}`);
+    }
+
     /* */
     getjobOfferById(id: number):Observable<any>{
       return this.http.get<JobOffer>(`${this.urlJobOffer}/${id}`);
@@ -29,6 +33,10 @@ export class JobOfferService {
 
     postOffer(jobOffer:JobOffer):Observable<any>{
       return this.http.post<JobOffer>(this.urlJobOffer, jobOffer);
+    }
+
+    updateJobOffer(jobOffer:JobOffer):Observable<any>{
+      return this.http.put<JobOffer>(`${this.urlJobOffer}/${jobOffer.id}`, jobOffer);
     }
 
     deleteOffer(id: number):Observable<any>{

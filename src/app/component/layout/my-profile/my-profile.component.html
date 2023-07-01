@@ -4,11 +4,13 @@
     <div>
       <mat-card>
         <mat-card-header>
-          <mat-card-title>Usuario N° {{ this.employer.user.id }}</mat-card-title>
+          <mat-card-title
+            >Usuario N° {{ this.employer.user.id }}</mat-card-title
+          >
         </mat-card-header>
         <mat-card-content>
           <br />
-          <div>
+          <div style="width: 700px">
             <dl class="row">
               <dt class="col-sm-3">Nombres</dt>
               <dd class="col-sm-9">{{ this.employer.user.name }}</dd>
@@ -32,7 +34,7 @@
             <img
               class="company-image"
               mat-card-image
-              src="{{this.employer.imageCompany}}"
+              src="{{ this.employer.imageCompany }}"
               alt="User's photo"
             />
           </div>
@@ -40,11 +42,10 @@
             <img
               class="card-image"
               mat-card-image
-              src="{{this.employer.user.imageProfile}}"
+              src="{{ this.employer.user.imageProfile }}"
               alt="User's photo"
             />
           </div>
-
         </mat-card-content>
         <mat-card-actions>
           <button
@@ -67,7 +68,7 @@
         </mat-card-header>
         <mat-card-content>
           <br />
-          <div style="width: 700px;">
+          <div style="width: 700px">
             <dl class="row">
               <dt class="col-sm-3">Nombre</dt>
               <dd class="col-sm-9">{{ this.driver.user.name }}</dd>
@@ -87,14 +88,13 @@
               <dd class="col-sm-9">{{ this.driver.licensetype }}</dd>
               <dt class="col-sm-3">Descripción</dt>
               <dd class="col-sm-9">{{ this.driver.user.description }}</dd>
-
             </dl>
           </div>
           <div class="company-image-container">
             <img
               class="company-image"
               mat-card-image
-              src="{{this.driver.user.imageProfile}}"
+              src="{{ this.driver.user.imageProfile }}"
               alt="User's photo"
             />
           </div>
@@ -112,6 +112,4 @@
       </mat-card>
     </div>
   </div>
-
-
 </div>

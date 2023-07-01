@@ -42,16 +42,18 @@ export class NewJobOfferComponent {
     this.propuesta.description = this.form.value.description;
     this.propuesta.licensetyperequired = this.form.value.licensetyperequired;
     this.propuesta.experienceyears = this.form.value.experienceyears;
+    this.propuesta.appliers = 0;
     this.propuesta.vehicle = this.form.value.vehicle;
     this.propuesta.arrangement = this.form.value.arrangement;
     this.propuesta.location = this.form.value.location;
     this.propuesta.area = this.form.value.area;
     this.employerService.getEmployerById(this.user.id).subscribe((data) => {
       this.propuesta.idEmployer = data;
-      this.jobOfferService.postOffer(this.propuesta).subscribe((data) => {
-        console.log(data);
-        this.router.navigate(['/home']);
-      });
+    });
+    this.jobOfferService.postOffer(this.propuesta).subscribe((data) => {
+      console.log(data);
+
+      this.router.navigate(['/home']);
     });
     console.log(this.propuesta);
   }

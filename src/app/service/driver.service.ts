@@ -30,6 +30,9 @@ export class DriverService {
     user.password = password;
     return this.http.post<User>(environment.base + '/sign-in', user);
   }
+  updateDriver(driver: Driver): Observable<any> {
+    return this.http.put<Driver>(this.urlDriver + '/' + driver.id, driver);
+  }
 
   registerDriver(driver: Driver): Observable<any> {
     driver.employed = false;

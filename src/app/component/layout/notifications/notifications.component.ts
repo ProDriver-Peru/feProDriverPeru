@@ -14,11 +14,20 @@ export class NotificationsComponent implements OnInit {
 
   constructor(private notificationService: NotificationService) {}
   ngOnInit(): void {
-    this.notificationService
-      .getListNotificationByIdEmployer(7)
-      .subscribe((data) => {
-        this.notifications = data;
-        console.log('data: '+data);
-      });
+    if (this.user.rol == 'employer') {
+      this.notificationService
+        .getListNotificationByIdEmployer(this.user.id)
+        .subscribe((data) => {
+          this.notifications = data;
+          console.log('data: ' + data);
+        });
+    } else if (this.user.rol == 'driver') {
+      this.notificationService
+        .getListNotificationByIdDriver(this.user.id)
+        .subscribe((data) => {
+          this.notifications = data;
+          console.log('data: ' + data);
+        });
+    }
   }
 }

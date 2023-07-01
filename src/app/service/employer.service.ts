@@ -22,6 +22,10 @@ export class EmployerService {
   getEmployerById(id: number): Observable<any> {
     return this.http.get<Employer>(this.urlEmployer + '/' + id);
   }
+  updateEmployer(employer: Employer): Observable<any> {
+    return this.http.put<Employer>(this.urlEmployer + '/' + employer.id, employer);
+  }
+
   registerEmployer(employer: Employer): Observable<any> {
     employer.user.rol = 'employer';
     employer.user.description = 'active';

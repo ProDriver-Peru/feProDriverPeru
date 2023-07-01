@@ -1,8 +1,16 @@
 <div>
   <h1>Mis Propuestas</h1>
+  <button
+  mat-raised-button
+  color="accent"
+  routerLink="/offers/new-job-offer/"
+  class="btn-new-offer"
+>
+  <a> Crear propuesta laboral </a>
+  <mat-icon fontIcon="add-box"></mat-icon>
+</button>
   <div class="mat-elevation-z2 tb-css-1 offers-table">
     <mat-table #table [dataSource]="dataSource" matSort>
-
       <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           Código Propuesta
@@ -23,14 +31,18 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           Licencia
         </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.licensetyperequired }} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.licensetyperequired }}
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="experienceyears">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           Años de experiencia
         </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.experienceyears }} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.experienceyears }}
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="appliers">
@@ -51,7 +63,9 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           Código Empleador
         </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.idEmployer }} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.idEmployer }}
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="location">
@@ -74,7 +88,7 @@
           Acciones
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button mat-icon-button color="primary" (click)="openDialog(element)">
+          <button mat-icon-button color="primary" (click)="editOffer(element)">
             <mat-icon>edit</mat-icon>
           </button>
           <button mat-icon-button color="warn" (click)="delete(element.id)">
@@ -85,7 +99,6 @@
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-
     </mat-table>
   </div>
 </div>
