@@ -39,7 +39,7 @@ export class RegisterComponent {
 
   ngOnInit(): void {
     this.form1 = new FormGroup({
-      name: new FormControl('', [
+      name: new FormControl(null, [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]*$'),
         Validators.maxLength(50),
@@ -67,16 +67,16 @@ export class RegisterComponent {
     });
     this.form3 = new FormGroup({
       description: new FormControl('', Validators.required),
-      imageProfile: new FormControl('', Validators.required),
+      imageProfile: new FormControl(''),
     });
     this.form4 = new FormGroup({
-      ruc: new FormControl('', Validators.required),
+      ruc: new FormControl('', [Validators.required, Validators.required, Validators.pattern('^[0-9]+$')]),
       companyname: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]*$'),
       ]),
       companyDescription: new FormControl('', Validators.required),
-      imageCompany: new FormControl('', Validators.required),
+      imageCompany: new FormControl(''),
     });
     this.form5 = new FormGroup({
       licensetype: new FormControl('', Validators.required),

@@ -9,14 +9,24 @@
   <mat-form-field class="register-input">
     <mat-label>Nombres</mat-label>
     <input matInput required="true" formControlName="name" />
+    <mat-error *ngIf="form1.get('name')?.invalid && form1.get('name')?.touched">
+      Vuelva a ingresar un nombre válido
+    </mat-error>
   </mat-form-field>
+
   <mat-form-field class="register-input">
     <mat-label>Apellidos</mat-label>
     <input matInput required="true" formControlName="lastName" />
+    <mat-error *ngIf="form1.get('lastName')?.invalid && form1.get('lastName')?.touched">
+      Vuelva a ingresar un apellido válido
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>DNI</mat-label>
     <input matInput required="true" formControlName="dni" />
+    <mat-error *ngIf="form1.get('dni')?.invalid && form1.get('dni')?.touched">
+      Vuelva a ingresar un DNI válido
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>Fecha de Nacimiento</mat-label>
@@ -28,6 +38,9 @@
     />
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="form1.get('dateOfBirth')?.invalid && form1.get('dateOfBirth')?.touched">
+      Seleccione una fecha
+    </mat-error>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Selecciona un rol</mat-label>
@@ -35,6 +48,9 @@
       <mat-option value="driver">Conductor</mat-option>
       <mat-option value="employer">Empleador</mat-option>
     </mat-select>
+    <mat-error *ngIf="form1.get('rol')?.invalid && form1.get('rol')?.touched">
+      Seleccione un rol
+    </mat-error>
   </mat-form-field>
 
   <button
@@ -57,10 +73,16 @@
       placeholder="example@prodriver.com"
       formControlName="email"
     />
+    <mat-error *ngIf="form2.get('email')?.invalid && form2.get('email')?.touched">
+      Vuelva a ingresar un correo electrónico válido
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>Contraseña</mat-label>
     <input matInput type="password" formControlName="password" />
+    <mat-error *ngIf="form2.get('password')?.invalid && form2.get('password')?.touched">
+      Ingrese una contraseña válida
+    </mat-error>
   </mat-form-field>
 
   <button
@@ -81,6 +103,9 @@
   <mat-form-field class="register-input">
     <mat-label>Descripción</mat-label>
     <textarea matInput formControlName="description" rows="5"></textarea>
+    <mat-error *ngIf="form3.get('description')?.invalid && form3.get('description')?.touched">
+      Ingrese una descripción válida
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>Foto de Perfil</mat-label>
@@ -104,14 +129,23 @@
   <mat-form-field class="register-input">
     <mat-label>Número de RUC</mat-label>
     <input matInput formControlName="ruc" />
+    <mat-error *ngIf="form4.get('ruc')?.invalid && form4.get('ruc')?.touched">
+      Ingrese una RUC válida
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>Nombre de la empresa</mat-label>
     <input matInput formControlName="companyname" />
+    <mat-error *ngIf="form4.get('companyname')?.invalid && form4.get('companyname')?.touched">
+      Ingrese nombre de empresa válida
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>Descripción de la empresa</mat-label>
     <textarea matInput formControlName="companyDescription" rows="5"></textarea>
+    <mat-error *ngIf="form4.get('companyDescription')?.invalid && form4.get('companyDescription')?.touched">
+      Ingrese una descripción de la empresa válida
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>Foto de Perfil de la Empresa</mat-label>
@@ -134,14 +168,23 @@
   <mat-form-field class="register-input">
     <mat-label>Tipo de Licencia</mat-label>
     <input matInput formControlName="licensetype" />
+    <mat-error *ngIf="form5.get('licensetype')?.invalid && form5.get('licensetype')?.touched">
+      Ingrese un tipo de licencia válida
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>N° de Licencia</mat-label>
     <input matInput formControlName="licensenumber" />
+    <mat-error *ngIf="form5.get('licensenumber')?.invalid && form5.get('licensenumber')?.touched">
+      Ingrese un número de licencia válida
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="register-input">
     <mat-label>Sector</mat-label>
     <input matInput formControlName="sector" />
+    <mat-error *ngIf="form5.get('sector')?.invalid && form5.get('sector')?.touched">
+      Ingrese un sector válido
+    </mat-error>
   </mat-form-field>
   <button
     mat-raised-button
